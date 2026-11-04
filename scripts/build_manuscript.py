@@ -15,8 +15,8 @@ from reportlab.lib.enums import TA_LEFT
 import matplotlib
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'output';OUT.mkdir(exist_ok=True)
-MAN=ROOT/'manuscript';MAN.mkdir(exist_ok=True)
+OUT=ROOT/'paper';OUT.mkdir(exist_ok=True)
+MAN=OUT;MAN.mkdir(exist_ok=True)
 refs=json.loads((ROOT/'research/references_literature.json').read_text())['references']
 refs.append({'id':'komura2026','authors':['Kazuki Komura','Seiji Yamada'],'year':2026,
              'title':'Deepening ideas vs. exploring new ones: AI strategy effects in human-AI creative collaboration',
@@ -50,7 +50,7 @@ lc=pd.read_csv(ROOT/'results/latency_contrasts.csv')
 selection=pd.read_csv(ROOT/'results/voice_selection_sensitivity.csv')
 gap=pd.read_csv(ROOT/'results/information_gap.csv')
 inc=pd.read_csv(ROOT/'results/cocreation_increment_vs_design.csv')
-lexical=json.loads((ROOT/'review_text/lexical_metrics.json').read_text())
+lexical=json.loads((ROOT/'analysis/lexical/lexical_metrics.json').read_text())
 retrain=pd.read_csv(ROOT/'results/voice_retraining_bootstrap.csv')
 retrain_meta=json.loads((ROOT/'results/voice_retraining_bootstrap.json').read_text())
 assert retrain_meta['bootstrap_draws_per_transfer']>=1000, 'Final manuscript requires the completed 1000-draw sensitivity.'
@@ -214,7 +214,7 @@ for rid in used:
 STYLE='''body{max-width:950px;margin:50px auto;padding:0 26px;color:#202a35;font:17px/1.62 Georgia,serif}h1{font:700 38px/1.13 Arial,sans-serif;color:#143c54}h2{font:700 25px/1.25 Arial,sans-serif;margin-top:38px}h3{font:700 19px Arial,sans-serif;margin-top:28px}.subtitle{font:22px Arial,sans-serif}.meta,.caption,figcaption{font:14px/1.5 Arial,sans-serif;color:#546472}table{border-collapse:collapse;width:100%;font:13px/1.4 Arial,sans-serif;margin:18px 0 30px}th{background:#e9f1f5;text-align:left}td,th{padding:9px;border-bottom:1px solid #ccd8dd;vertical-align:top}img{width:100%;height:auto}.equation{background:#eef3f5;padding:16px;font:16px/1.5 monospace}.reference{font-size:13px}a{color:#125b8a}code{font-size:13px}@media print{body{margin:0;max-width:none}h2,h3{break-after:avoid}table,figure{break-inside:avoid}}'''
 body='\n'.join(parts)
 paper='<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Predicting Perceived Intelligence</title><style>'+STYLE+'</style></head><body>'+body+'</body></html>'
-(MAN/'paper.html').write_text(paper,encoding='utf-8')
+(MAN/'manuscript.html').write_text(paper,encoding='utf-8')
 (MAN/'references_used.json').write_text(json.dumps([byid[i] for i in used],ensure_ascii=False,indent=2),encoding='utf-8')
 
 # ReportLab authoring uses embedded Unicode fonts, and no browser/network runtime.
@@ -267,7 +267,7 @@ def footer(canvas,doc):
     canvas.saveState();canvas.setFont('Sans',7);canvas.setFillColor(colors.HexColor('#637582'))
     canvas.drawString(50,25,'Perceived intelligence · Secondary analysis · 4 November 2026')
     canvas.drawRightString(545,25,str(doc.page));canvas.restoreState()
-doc=SimpleDocTemplate(str(OUT/'research_paper.pdf'),pagesize=(595.28,841.89),rightMargin=50,leftMargin=50,topMargin=43,bottomMargin=43,
+doc=SimpleDocTemplate(str(OUT/'manuscript.pdf'),pagesize=(595.28,841.89),rightMargin=50,leftMargin=50,topMargin=43,bottomMargin=43,
                       title='Predicting Perceived Intelligence from Design, Behavior and User Judgments',author='Research manuscript; AI-assisted secondary analysis')
 doc.build(story,onFirstPage=footer,onLaterPages=footer)
-print('Built',OUT/'research_paper.pdf','words',len(soup.get_text().split()),'references',len(used))
+print('Built',OUT/'manuscript.pdf','words',len(soup.get_text().split()),'references',len(used))
