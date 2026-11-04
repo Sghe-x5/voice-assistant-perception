@@ -1,0 +1,69 @@
+{
+  "name": "Voice perceived-intelligence research Ridge baseline",
+  "version": "2026-11-04",
+  "source": "https://osf.io/exmc8/",
+  "training_n": 553,
+  "alpha": 10.0,
+  "target": "Mean of five 1\u20137 adapted perceived-intelligence items after watching six voice-assistant vignettes",
+  "features": [
+    "partner",
+    "assertive",
+    "age_years",
+    "female",
+    "diverse_gender",
+    "owner",
+    "information_search"
+  ],
+  "coding": {
+    "partner": "1 partner framing, 0 servant framing",
+    "assertive": "1 assertive style, 0 affiliative style",
+    "age_years": "Age at source study, computed as 2024 minus birth year; prediction input should be age in years, not birth year",
+    "female": "Source female category indicator; 0 otherwise",
+    "diverse_gender": "Source diverse-gender category indicator; 0 otherwise; only five participants, no subgroup validation",
+    "owner": "1 owns a smart speaker, 0 does not; not general voice-assistant exposure",
+    "information_search": "Mean frequency 1\u20137 over five named services among owners; null for nonowners"
+  },
+  "training_ranges": {
+    "partner": [
+      0.0,
+      1.0
+    ],
+    "assertive": [
+      0.0,
+      1.0
+    ],
+    "age_years": [
+      20.0,
+      76.0
+    ],
+    "female": [
+      0.0,
+      1.0
+    ],
+    "diverse_gender": [
+      0.0,
+      1.0
+    ],
+    "owner": [
+      0.0,
+      1.0
+    ],
+    "information_search": [
+      1.0,
+      5.2
+    ]
+  },
+  "limitations": [
+    "Research baseline only, not deployment-validated",
+    "Modest or absent transfer improvement over a constant baseline; see results/voice_prediction.csv",
+    "Inputs do not measure factual accuracy, task success, latency or repair behavior",
+    "Only UK English-language vignette judgments, not direct voice interaction",
+    "All-data final fit is not independently evaluated",
+    "No calibrated individual predictive interval is available",
+    "Do not interpret demographic coefficients as causal effects or use for consequential decisions"
+  ],
+  "metrics_file": "results/voice_prediction.csv",
+  "training_procedure": "Five-fold inner CV on full released n553; alpha chosen on MAE; imputation/scaling inside pipeline; fit performed after assessment",
+  "output": "Unclipped linear estimate on nominal 1\u20137 rating scale, not probability",
+  "seed": 20261104
+}
