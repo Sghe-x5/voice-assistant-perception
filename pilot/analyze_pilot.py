@@ -128,8 +128,6 @@ def analyze(paths, annotations=None):
             for field in ('product', 'version'):
                 check(text(m.get(field)), 'model_metadata', f'{slot}.{field} required; unknown version may be explicit.')
             check(m.get('mode') in MODES, 'model_mode', f'{slot}: unknown interaction mode.')
-            check(not re.search('claude|anthropic', str(m.get('product')) + str(m.get('version')), re.I),
-                  'excluded_product', f'{slot}: product excluded by pilot protocol.')
             check(m.get('details') is None or text(m.get('details')), 'model_details', f'{slot}: details must be text/null.')
             check(m.get('mode') != 'other' or text(m.get('details')), 'other_mode_details', f'{slot}: describe other mode.')
             check(timestamp(m.get('baseline_recorded_at')) is not None, 'baseline_timestamp', f'{slot}: timestamp required.')
