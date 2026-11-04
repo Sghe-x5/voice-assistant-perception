@@ -29,6 +29,6 @@ quality is irrelevant: char TF-IDF is limited, the sample is small, and genuinel
 semantic or independent human content measurements remain untested. All records
 are from the original human study; no AI-generated outcomes are added.
 
-The script must stay offline, preserve originals, write only under review_text,
+The script must stay offline, preserve originals, write only under analysis/lexical,
 and expose joins, folds, selected penalties and predictions. Existing article
 results are not overwritten. Any generated code is reviewed before execution.

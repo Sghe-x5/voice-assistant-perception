@@ -1,10 +1,9 @@
-# review_text/analyze_lexical.py
-# Run from repo root: python review_text/analyze_lexical.py
-# No network, no subprocess, no eval, no installs. Writes only under review_text/.
+# analysis/lexical/analyze_lexical.py
+# Run from repo root: python analysis/lexical/analyze_lexical.py
+# No network, no subprocess, no eval, no installs. Writes only under analysis/lexical/.
 
 import json
 import hashlib
-import re
 import sys
 from pathlib import Path
 
@@ -21,15 +20,15 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 SEED = 20261104
 ALPHAS = [0.1, 1.0, 10.0, 100.0, 1000.0]
-OUT = Path("review_text")
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / "analysis/lexical"
 OUT.mkdir(parents=True, exist_ok=True)
 
-RAW = Path("data/raw/komura2026/s003.xlsx")
-PART = Path("results/cocreation_participants.csv")
-PRED_P = Path("results/cocreation_predictions_participant.csv")
-PRED_C = Path("results/cocreation_predictions_condition.csv")
+RAW = ROOT / Path("data/raw/komura2026/s003.xlsx")
+PART = ROOT / Path("results/cocreation_participants.csv")
+PRED_P = ROOT / Path("results/cocreation_predictions_participant.csv")
+PRED_C = ROOT / Path("results/cocreation_predictions_condition.csv")
 
-AI_SAFE = re.compile(r"\b(adoption|is_selected|intelligence|trust|rating|condition|aitype)\b", re.I)
 
 
 def fail(msg):
@@ -102,7 +101,6 @@ def make_pipeline(num_cols, cat_cols, text_col, with_text):
 
 
 def run_outer(design, folds, name, text_col, with_text, feat_cols_num, feat_cols_cat):
-    y = design["intelligence"].to_numpy(dtype=float)
     # outer folds from file
     outer_ids = sorted(folds["sessionId"].astype(str).unique())
     design = design.copy()
@@ -261,7 +259,7 @@ def main():
     }
     with open(OUT / "lexical_manifest.json", "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    print("DONE. Wrote review_text/lexical_oof_predictions.csv, lexical_metrics.json, lexical_manifest.json")
+    print("DONE. Wrote analysis/lexical/lexical_oof_predictions.csv, lexical_metrics.json, lexical_manifest.json")
 
 
 if __name__ == "__main__":
