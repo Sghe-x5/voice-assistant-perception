@@ -1,6 +1,6 @@
 # Earlier prospective live-voice latency protocol
 
-**Design status update (2026-11-04 audit):** Retained as an optional latency extension. The active proposed research sequence and primary context-by-clarification question are in [the research roadmap](../docs/research_plan_ru.md). Do not combine the two primary estimands or sample-size plans without a new protocol. Neither design has been executed.
+**Design status update (2026-11-05):** Historical optional latency design. Current candidates and corrected estimands are in [the new design document](experiment_design_2026-11-05.md); clarification is not a predetermined flagship. No design has been executed or externally preregistered.
 
 
 Status: **design only; no participants recruited, no new observations collected, no ethics approval or public preregistration obtained for this protocol.** It is a specification for extending the completed public-data secondary analysis, not evidence that a live-user model has been validated. Version 2026-11-04.
