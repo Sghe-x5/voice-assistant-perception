@@ -17,6 +17,7 @@
 | Воспроизвести расчёты | Быстрый старт ниже |
 | Продолжить исследование | [Приоритеты](docs/roadmap.md), [литература и методы](research/README.md) |
 | Построить новый эксперимент | [Пошаговый план на русском](docs/research_plan_ru.md), [кодбук](docs/dialogue_codebook_ru.md), [проверка новизны](research/novelty_matrix_2026-11-04.md) |
+| Начать наблюдения без бюджета | [Инструкция и интервью](docs/fieldwork_start_ru.md), [дневник](docs/fieldwork_diary_ru.md), [бесплатный технический прогон](pilot/free_model_probe.md) |
 | Посмотреть независимую перепроверку | [Аудит 4 ноября](docs/audit_2026-11-04.md) |
 | Присоединиться к разработке | [Совместная работа](docs/contributing.md) |
 | Запустить Codex | [AGENTS.md](AGENTS.md) |
