@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-05
+
+- Completed both timer preflight cases in Qwen (visible Qwen3.7-Plus label, Auto, guest interface); retained the exact prompts and qualified example-generation ambiguity.
+- Active zero-budget core panel is ChatGPT, DeepSeek and Qwen. Claude/Gemini excluded from the current run by the user; search-enabled Perplexity stays separate.
+- Updated the planning example to three configurations; generated allocations remain prospective, not observations.
+
 ## 2026-11-04
 
 - Simplified onboarding; grouped supplementary analyses, documentation and paper.

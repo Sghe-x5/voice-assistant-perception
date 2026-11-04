@@ -1,6 +1,23 @@
 [
-  {"model_id":"gpt-config-1","product":"GPT","version":"unknown — replace with observed version before collection","mode":"text","details":"Planning example only; no API call or voice capability implied"},
-  {"model_id":"claude-config-1","product":"Claude","version":"unknown — replace with observed version before collection","mode":"text","details":"Planning example only; no API call or voice capability implied"},
-  {"model_id":"deepseek-config-1","product":"DeepSeek","version":"unknown — replace with observed version before collection","mode":"text","details":"Planning example only; no API call or voice capability implied"},
-  {"model_id":"qwen-config-1","product":"Qwen","version":"unknown — replace with observed version before collection","mode":"text","details":"Planning example only; no API call or voice capability implied"}
+  {
+    "model_id": "gpt-config-1",
+    "product": "ChatGPT web",
+    "version": "unknown — guest web backend not disclosed",
+    "mode": "text",
+    "details": "Planning example for zero-budget text pilot; record actual session configuration"
+  },
+  {
+    "model_id": "deepseek-config-1",
+    "product": "DeepSeek",
+    "version": "unknown — replace with observed version before collection",
+    "mode": "text",
+    "details": "Planning example only; no API call or voice capability implied"
+  },
+  {
+    "model_id": "qwen-config-1",
+    "product": "Qwen",
+    "version": "Qwen3.7-Plus — visible UI label on 2026-11-05; backend unverified",
+    "mode": "text",
+    "details": "Auto mode; guest access observed; planning example, verify before collection"
+  }
 ]
