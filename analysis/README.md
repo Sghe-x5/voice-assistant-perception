@@ -10,3 +10,10 @@
 проверка уже входит в него; повторять её отдельно без изменений не требуется.
 Остальные проверки независимы от основного анализа. Это не новые участники
 и не доказательство валидности общего фактора интеллекта.
+# Additional public-release audit
+
+[Generalization data](generalization/README.md): pinned Vafa et al. CSV audit,
+question-overlap checks and two independently reproduced non-text baselines.
+This endpoint is belief change, not perceived intelligence; it stays separate
+from the three primary datasets and their reproduction runner.
+
