@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src data:; base-uri 'none'; form-action 'none'">
+<title>Впечатление об ассистенте — исследовательский пилот</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#20312e;background:#f0f4f2;line-height:1.6}*{box-sizing:border-box}body{margin:0}main{max-width:780px;margin:36px auto;padding:0 20px 56px}header{margin-bottom:24px}.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:#47685d}h1{font-size:30px;line-height:1.2}h2{font-size:22px}h3{font-size:16px;margin-bottom:8px}.card{background:white;border:1px solid #cfddd5;border-radius:14px;padding:24px;margin:16px 0}.muted{color:#52645d;font-size:14px}.notice{border-left:4px solid #597f6a;padding:12px 16px;background:#e5eee8;white-space:pre-wrap}.stimulus{white-space:pre-wrap}label{display:block;margin:16px 0 8px}select,input[type=number],input[type=text]{font:inherit;padding:9px;border:1px solid #6b8075;border-radius:6px;max-width:100%;background:white}input[type=number]{width:120px}button{font:inherit;border:0;border-radius:7px;padding:11px 18px;background:#225b45;color:white;cursor:pointer;margin:8px 8px 0 0}button.secondary{background:#e1ebe5;color:#20312e;border:1px solid #95aa9d}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #b77522;outline-offset:3px}#error{color:#9c2727;font-weight:600}progress{width:100%;accent-color:#225b45}fieldset{border:0;padding:0;margin:0}legend{font-weight:600}.checks{display:flex;gap:10px;align-items:flex-start}.checks input{margin-top:7px}.checks label{margin:0}#test{background:#fff0d2;padding:10px;font-weight:700}footer{margin-top:25px}@media(max-width:500px){main{margin:20px auto}.card{padding:18px}h1{font-size:25px}button{width:100%}}
+</style></head><body><main>
+<header><div class="eyebrow">Исследовательский пилот · чтение сценария</div><h1>Впечатление об ассистенте</h1><div id="test" hidden>ТЕХНИЧЕСКАЯ ПРОВЕРКА — ответы не являются человеческими наблюдениями</div><p id="progressText" class="muted"></p><progress id="progress" value="0" max="7"></progress></header>
+<section id="screen" class="card" aria-live="polite"></section><p id="error" role="alert"></p>
+<footer><button id="next">Начать</button><button id="partial" class="secondary" hidden>Завершить раньше и скачать ответы</button><p class="muted">Страница работает без сети. Ответы хранятся только в памяти этой вкладки: обновление страницы их удалит. Скачать файл — не значит отправить его исследовательнице.</p></footer>
+</main><script>
+'use strict';
+const CONFIG = /*CONFIG*/null;
+const el = id => document.getElementById(id);
+const screen = el('screen');
+if (!CONFIG) {screen.textContent='Это шаблон. Подготовьте отдельную страницу командой build из README.';el('next').hidden=true;}
+else {
+const seq=['exposure',...(CONFIG.measure_order==='ratings_first'?['ratings',...CONFIG.probe_order]:[...CONFIG.probe_order,'ratings']),'checks'];
+let step=-1, ended=false;
+const empty=keys=>Object.fromEntries(keys.map(k=>[k,null]));
+const state={version:CONFIG.version,plan_sha256:CONFIG.plan_sha256,allocation_id:CONFIG.allocation_id,participant_code:'',sampling_role:CONFIG.sampling_role,evidence_origin:CONFIG.evidence_origin,mode:'text_vignette_observer',analysis_permission:false,status:'partial',ratings:empty(Object.keys(CONFIG.ratings)),forecasts:empty(CONFIG.probe_order),checks:{source:null,tools:null,clarity:null},presented:[],completed:[]};
+el('test').hidden=CONFIG.evidence_origin!=='synthetic_test';
+function add(tag,text,parent=screen,cls=''){const n=document.createElement(tag);n.textContent=text;if(cls)n.className=cls;parent.appendChild(n);return n;}
+function select(id,label,choices){const l=add('label',label);l.htmlFor=id;const s=add('select','');s.id=id;for(const [value,text] of [['','Не могу оценить / пропустить'],...choices]){const o=add('option',text,s);o.value=value;}return s;}
+function rating(id,label){return select(id,label,Array.from({length:7},(_,i)=>[String(i+1),`${i+1}${i===0?' — совсем не согласен/не согласна':i===6?' — полностью согласен/согласна':''}`]));}
+function draw(){screen.replaceChildren();el('error').textContent='';el('progress').value=Math.max(0,step);el('progressText').textContent=step<0?'Перед началом':`Шаг ${step+1} из ${seq.length}`;
+ if(step<0){
+ add('h2','Перед началом');add('p','Вы прочитаете вымышленный сценарий с ассистентом и оцените своё впечатление. Это подготовленные исследовательские материалы, а не запись работы реальной модели. Правильного впечатления нет.');
+ add('p',CONFIG.study_info,screen,'notice');add('p','Участие добровольное. Любой вопрос можно пропустить; можно закончить раньше. Не вводите имя, контакты или другие личные сведения.');
+ const l=add('label','Код участника, выданный исследовательницей');l.htmlFor='pid';const i=add('input','');i.id='pid';i.type='text';i.placeholder='P-0123456789ab';i.autocomplete='off';
+ const row=add('div','',screen,'checks');const c=add('input','',row);c.type='checkbox';c.id='consent';const lab=add('label','Мне понятны условия выше. Я добровольно участвую и разрешаю анализ этих ответов.',row);lab.htmlFor='consent';return;}
+ const page=seq[step];state.presented.push(page);el('next').textContent=page==='checks'?'Завершить и скачать ответы':'Далее';el('partial').hidden=!state.completed.includes('exposure');
+ if(page==='exposure'){
+ add('h2','Один эпизод');add('p','Ниже показаны запрос, источник поправки и итог. Согласно условиям сценария, запись верно указывает, кто получил поправку. Это описание наблюдаемого процесса, а не доступ к скрытым мыслям модели.',screen,'muted');
+ for(const [title,key] of [['Запрос','request'],['Журнал сценария','process'],['Конечный результат','final']]){add('h3',title);add('p',CONFIG.exposure[key],screen,'stimulus');}
+ }else if(page==='ratings'){
+ add('h2','Ваше впечатление об эпизоде');add('p','Оцените ассистента из прочитанного сценария. Можно оставить любой пункт без оценки.');for(const [key,text] of Object.entries(CONFIG.ratings))rating(key,text);
+ }else if(page==='checks'){
+ add('h2','Как вы поняли условия');add('p','Эти вопросы помогут проверить понятность материалов. Ошибка не отменяет ваши предыдущие ответы.');
+ select('source','Кто вычислил поправку в показанном эпизоде?',[['assistant','Сам ассистент'],['component','Отдельный вычислительный модуль'],['unknown','Не знаю / не помню']]);
+ select('tools','В новых задачах отдельный вычислительный модуль…',[['available','Доступен'],['unavailable','Недоступен'],['unknown','Не знаю / не помню']]);rating('clarity','Условия сценария и новых задач были мне понятны.');
+ }else{
+ add('h2','Новая задача');add('p','Представьте, что тот же ассистент получает запрос ниже. В этой новой задаче отдельный вычислительный модуль недоступен. Оцените шанс, что ассистент самостоятельно даст полностью правильный ответ с соблюдением условий. Саму задачу решать не требуется.',screen,'notice');
+ add('p',CONFIG.probes.find(p=>p.id===page).request,screen,'stimulus');const label=add('label','Вероятность полностью правильного ответа: от 0 до 100%');label.htmlFor='forecast';const n=add('input','');n.id='forecast';n.type='number';n.min='0';n.max='100';n.step='1';add('p','0% — точно не справится; 100% — точно справится. Пустое поле — не могу оценить.',screen,'muted');
+ }
+}
+function num(id){const s=el(id).value;return s===''?null:Number(s);}
+function capture(){const page=seq[step];if(page==='ratings'){for(const k of Object.keys(CONFIG.ratings))state.ratings[k]=num(k);}else if(page==='checks'){state.checks={source:el('source').value||null,tools:el('tools').value||null,clarity:num('clarity')};}else if(page!=='exposure'){
+ if(el('forecast').validity.badInput)throw Error('Завершите ввод числа или очистите поле, чтобы пропустить вопрос.');const n=num('forecast');if(n!==null&&(!Number.isInteger(n)||n<0||n>100))throw Error('Введите целое число от 0 до 100 или оставьте поле пустым.');state.forecasts[page]=n;}}
+function finish(complete){ended=true;state.status=complete?'complete':'partial';const blob=new Blob([JSON.stringify(state,null,2)+'\n'],{type:'application/json'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=`${CONFIG.allocation_id}-${state.participant_code}.json`;link.textContent='Скачать файл ещё раз';screen.replaceChildren();add('h2','Ответы подготовлены');add('p','Файл сохраняется на вашем устройстве. Передайте его только способом, согласованным с исследовательницей. Вы можете отказаться от передачи.');screen.appendChild(link);link.click();el('next').hidden=true;el('partial').hidden=true;el('progress').value=state.completed.length;el('progressText').textContent=complete?'Завершено':'Завершено раньше';}
+el('next').onclick=()=>{if(ended)return;try{el('error').textContent='';if(step<0){const pid=el('pid').value.trim();if(!/^P-[0-9a-f]{12}$/.test(pid))throw Error('Введите выданный код формата P-0123456789ab.');if(!el('consent').checked)throw Error('Без добровольного согласия сбор ответов не начинается.');state.participant_code=pid;state.analysis_permission=true;step=0;draw();return;}capture();state.completed.push(seq[step]);if(step===seq.length-1)finish(true);else{step++;draw();window.scrollTo(0,0);}}catch(e){el('error').textContent=e.message;}};
+el('partial').onclick=()=>{try{capture();finish(false);}catch(e){el('error').textContent=e.message;}};
+draw();
+}
+</script></body></html>
