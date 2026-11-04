@@ -1,0 +1,638 @@
+{
+  "search_cutoff": "2026-11-04",
+  "review_type": "targeted scoping review; not exhaustive systematic review",
+  "references": [
+    {
+      "id": "walker1997",
+      "authors": [
+        "Marilyn A. Walker",
+        "Diane J. Litman",
+        "Candace A. Kamm",
+        "Alicia Abella"
+      ],
+      "year": 1997,
+      "title": "PARADISE: A Framework for Evaluating Spoken Dialogue Agents",
+      "venue": "ACL/EACL",
+      "doi": "10.3115/976909.979652",
+      "url": "https://aclanthology.org/P97-1035.pdf",
+      "access_status": "full_text_sections",
+      "verification_note": "Foundational predictive framework; published DOI verified from ACL record, not third-party DOI metadata.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "hone2000",
+      "authors": [
+        "Kate S. Hone",
+        "Robert Graham"
+      ],
+      "year": 2000,
+      "title": "Towards a tool for the Subjective Assessment of Speech System Interfaces (SASSI)",
+      "venue": "Natural Language Engineering",
+      "doi": null,
+      "url": "https://bura.brunel.ac.uk/bitstream/2438/3077/1/SASSI%20Paper%202000.pdf",
+      "access_status": "full_text_sections",
+      "verification_note": "Exploratory measurement development; four applications, 214 questionnaires.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "polkosky2005",
+      "authors": [
+        "Melanie Diane Polkosky"
+      ],
+      "year": 2005,
+      "title": "Toward a Social-Cognitive Psychology of Speech Technology: Affective Responses to Speech-Based e-Service",
+      "venue": "University of South Florida dissertation",
+      "doi": null,
+      "url": "https://digitalcommons.usf.edu/etd/819/",
+      "access_status": "primary_abstract",
+      "verification_note": "Do not infer item-level results beyond primary abstract without reading dissertation.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "lewis2015",
+      "authors": [
+        "James R. Lewis",
+        "Mary L. Hardzinski"
+      ],
+      "year": 2015,
+      "title": "Investigating the psychometric properties of the Speech User Interface Service Quality questionnaire",
+      "venue": "International Journal of Speech Technology",
+      "doi": "10.1007/s10772-015-9289-1",
+      "url": "https://link.springer.com/article/10.1007/s10772-015-9289-1",
+      "access_status": "primary_abstract_and_appendices",
+      "verification_note": "Publisher main text subscription restricted; abstract and instrument appendices accessible. Published 2015-07-05.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "bartneck2009",
+      "authors": [
+        "Christoph Bartneck",
+        "Dana Kulić",
+        "Elizabeth Croft",
+        "Susana Zoghbi"
+      ],
+      "year": 2009,
+      "title": "Measurement Instruments for the Anthropomorphism, Animacy, Likeability, Perceived Intelligence, and Perceived Safety of Robots",
+      "venue": "International Journal of Social Robotics",
+      "doi": "10.1007/s12369-008-0001-3",
+      "url": "https://www.bartneck.de/publications/2009/measurementInstrumentsRobots/bartneckCroftKulicZogbiSORO2009.pdf",
+      "access_status": "full_text_sections",
+      "verification_note": "Online 2008-11-20; 2009 volume. Direct intelligence measure.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "bawack2021",
+      "authors": [
+        "Ransome Bawack"
+      ],
+      "year": 2021,
+      "title": "How Perceived Intelligence Affects Consumer Adoption of AI-Based Voice Assistants: An Affordance Perspective",
+      "venue": "PACIS 2021 Proceedings",
+      "doi": null,
+      "url": "https://aisel.aisnet.org/pacis2021/178/",
+      "access_status": "primary_abstract",
+      "verification_note": "Full text not opened. Four-dimensional perceived intelligence prior.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "guha2023",
+      "authors": [
+        "Abhijit Guha",
+        "Timna Bressgott",
+        "Dhruv Grewal",
+        "Dominik Mahr",
+        "Martin Wetzels",
+        "Elisa Schweiger"
+      ],
+      "year": 2023,
+      "title": "How artificiality and intelligence affect voice assistant evaluations",
+      "venue": "Journal of the Academy of Marketing Science",
+      "doi": "10.1007/s11747-022-00874-7",
+      "url": "https://link.springer.com/article/10.1007/s11747-022-00874-7",
+      "access_status": "full_text_sections",
+      "verification_note": "Online 2022-06-28; volume 51 (2023), 843–866. Major novelty threat.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "ling2025",
+      "authors": [
+        "Erin Chao Ling",
+        "Iis Tussyadiah",
+        "Anyu Liu",
+        "Jason Stienmetz"
+      ],
+      "year": 2025,
+      "title": "Perceived Intelligence of Artificially Intelligent Assistants for Travel: Scale Development and Validation",
+      "venue": "Journal of Travel Research",
+      "doi": "10.1177/00472875231217899",
+      "url": "https://journals.sagepub.com/doi/10.1177/00472875231217899",
+      "access_status": "full_text_sections",
+      "verification_note": "Online 2023-12-29; volume 64(2). Methods include data collection in 2020.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "doyle2025",
+      "authors": [
+        "Philip R. Doyle",
+        "Iona Gessinger",
+        "Justin Edwards",
+        "Leigh Clark",
+        "Odile Dumbleton",
+        "Diego Garaialde",
+        "Daniel Rough",
+        "Anna Bleakley",
+        "Holly P. Branigan",
+        "Benjamin R. Cowan"
+      ],
+      "year": 2025,
+      "title": "The Partner Modelling Questionnaire: A Validated Self-Report Measure of Perceptions toward Machines as Dialogue Partners",
+      "venue": "ACM Transactions on Computer-Human Interaction",
+      "doi": "10.1145/3729170",
+      "url": "https://arxiv.org/pdf/2308.07164",
+      "access_status": "full_text_revised_preprint_sections",
+      "verification_note": "Read arXiv v2 dated 2025-02-17; publication metadata independently verified from university-hosted publisher PDF search. Published August 2025.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "seaborn2024",
+      "authors": [
+        "Katie Seaborn",
+        "Iona Gessinger",
+        "Suzuka Yoshida",
+        "Benjamin R. Cowan",
+        "Philip R. Doyle"
+      ],
+      "year": 2024,
+      "title": "Cross-Cultural Validation of Partner Models for Voice User Interfaces",
+      "venue": "CUI 2024 / preprint",
+      "doi": null,
+      "url": "https://arxiv.org/html/2405.09002v1",
+      "access_status": "full_text_sections",
+      "verification_note": "Preprint 2024-05-15. Do not cite manuscript placeholder DOI.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "sarigul2026",
+      "authors": [
+        "Busra Sarigul",
+        "Frank M. Schneider",
+        "Sonja Utz"
+      ],
+      "year": 2026,
+      "title": "Beyond voice: how do social role and speech style affect the perceived credibility and intelligence of voice assistants?",
+      "venue": "Review of Communication",
+      "doi": "10.1080/15358593.2026.2621084",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/15358593.2026.2621084",
+      "access_status": "publisher_indexed_full_text_sections",
+      "verification_note": "Published 2026-03-06. Direct page/PDF requests 403; primary indexed methods/results accessible. Recruitment and analysis sample counts differ.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "tan2026",
+      "authors": [
+        "Felicia Fang-Yi Tan",
+        "Moritz A. Messerschmidt",
+        "Wen Yin",
+        "Oded Nov"
+      ],
+      "year": 2026,
+      "title": "The Impact of Response Latency and Task Type on Human-LLM Interaction and Perception",
+      "venue": "CHI 2026",
+      "doi": "10.1145/3772318.3790716",
+      "url": "https://arxiv.org/html/2604.06183v1",
+      "access_status": "full_text_sections",
+      "verification_note": "Text-only study. arXiv identifier begins 2604 while HTML header states 2026-02-09; use conference date instead of resolving metadata discrepancy by assumption.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "maslych2025",
+      "authors": [
+        "Mykola Maslych",
+        "Mohammadreza Katebi",
+        "Christopher Lee",
+        "Yahya Hmaiti",
+        "Amirpouya Ghasemaghaei",
+        "Christian Pumarada",
+        "Janneese Palmer",
+        "Esteban Segarra Martinez",
+        "Marco Emporio",
+        "Warren Snipes",
+        "Ryan P. McMahan",
+        "Joseph J. LaViola Jr."
+      ],
+      "year": 2025,
+      "title": "Mitigating Response Delays in Free-Form Conversations with LLM-powered Intelligent Virtual Agents",
+      "venue": "CUI 2025",
+      "doi": "10.1145/3719160.3736636",
+      "url": "https://mykola.io/publication/iva-cui/maslych2025mitigating.pdf",
+      "access_status": "full_text_sections",
+      "verification_note": "Author manuscript; venue July 8–10 2025. VR/multimodal context.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "jacka2025",
+      "authors": [
+        "Rhys Jacka",
+        "Paola R. Peña",
+        "Sophie Leonard",
+        "Éva Székely",
+        "Benjamin R. Cowan"
+      ],
+      "year": 2025,
+      "title": "Talking to…uh…um…Machines: The Impact of Disfluent Speech Agents on Partner Models and Perspective Taking",
+      "venue": "CUI 2025",
+      "doi": "10.1145/3719160.3737625",
+      "url": "https://arxiv.org/html/2507.18315v1",
+      "access_status": "full_text_sections",
+      "verification_note": "Preprint posted 2025-07-24; conference July 8–10 2025.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "mathur2026",
+      "authors": [
+        "Niharika Mathur",
+        "Hasibur Rahman",
+        "Smit Desai"
+      ],
+      "year": 2026,
+      "title": "The Differential Effects of Agreeableness and Extraversion on Older Adults’ Perceptions of Conversational AI Explanations in Assistive Settings",
+      "venue": "arXiv preprint",
+      "doi": null,
+      "url": "https://arxiv.org/html/2603.08164v1",
+      "access_status": "full_text_sections",
+      "verification_note": "2026-03-09. Manuscript contains conference/DOI placeholders; accepted venue not verified.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "ma2026",
+      "authors": [
+        "Yong Ma",
+        "Xuesong Zhang",
+        "Xuedong Zhang",
+        "Natalia Bartłomiejczyk",
+        "Seungwoo Je",
+        "Adrian Holzer",
+        "Morten Fjeld",
+        "Andreas Butz"
+      ],
+      "year": 2026,
+      "title": "Beyond Words: Measuring User Experience through Speech Analysis in Voice User Interfaces",
+      "venue": "CHI 2026",
+      "doi": "10.1145/3772318.3791747",
+      "url": "https://arxiv.org/html/2603.19904v1",
+      "access_status": "full_text_sections",
+      "verification_note": "Conference publication 2026-04-13; preprint 2026-03-20. Persona manipulation bundles several properties.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "xiao2026",
+      "authors": [
+        "Yazhen Xiao",
+        "Haisu Zhang"
+      ],
+      "year": 2026,
+      "title": "Behind the hype: a closer look at voice assistant skills, product control strategy and user evaluations",
+      "venue": "Marketing Intelligence & Planning",
+      "doi": "10.1108/MIP-10-2025-0782",
+      "url": "https://www.emerald.com/mip/article/doi/10.1108/MIP-10-2025-0782/1393993/Behind-the-hype-a-closer-look-at-voice-assistant",
+      "access_status": "publisher_indexed_full_text_sections",
+      "verification_note": "Publisher says 2026-08-31; aggregator says 2026-08-28. Prioritize publisher. Field observational design.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "frehmann2026",
+      "authors": [
+        "Katharina Frehmann",
+        "Marc Ziegele"
+      ],
+      "year": 2026,
+      "title": "Trust in voice-based assistants: a multidimensional conceptualization based on in-home user interviews",
+      "venue": "Frontiers in Human Dynamics",
+      "doi": "10.3389/fhumd.2026.1941118",
+      "url": "https://www.frontiersin.org/journals/human-dynamics/articles/10.3389/fhumd.2026.1941118/full",
+      "access_status": "full_text_sections",
+      "verification_note": "Published 2026-10-14; data collection summer 2024; sensitive raw transcripts not publicly deposited.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "mehri2020usr",
+      "authors": [
+        "Shikib Mehri",
+        "Maxine Eskenazi"
+      ],
+      "year": 2020,
+      "title": "USR: An Unsupervised and Reference Free Evaluation Metric for Dialog Generation",
+      "venue": "ACL 2020",
+      "doi": "10.18653/v1/2020.acl-main.64",
+      "url": "https://aclanthology.org/2020.acl-main.64.pdf",
+      "access_status": "full_text_sections",
+      "verification_note": "Text dialogue human ratings, not a direct voice-intelligence target.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "mehri2020fed",
+      "authors": [
+        "Shikib Mehri",
+        "Maxine Eskenazi"
+      ],
+      "year": 2020,
+      "title": "Unsupervised Evaluation of Interactive Dialog with DialoGPT",
+      "venue": "arXiv primary record",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2006.12719",
+      "access_status": "primary_abstract",
+      "verification_note": "The full FED paper was not inspected by this reviewer; retained as established benchmark source.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "lin2024",
+      "authors": [
+        "Ying-Chun Lin",
+        "Jennifer Neville",
+        "Jack W. Stokes",
+        "Longqi Yang",
+        "Tara Safavi",
+        "Mengting Wan",
+        "Scott Counts",
+        "Siddharth Suri",
+        "Reid Andersen",
+        "Xiaofeng Xu",
+        "Deepak Gupta",
+        "Sujay Kumar Jauhar",
+        "Xia Song",
+        "Georg Buscher",
+        "Saurabh Tiwary",
+        "Brent Hecht",
+        "Jaime Teevan"
+      ],
+      "year": 2024,
+      "title": "Interpretable User Satisfaction Estimation for Conversational Systems with Large Language Models",
+      "venue": "ACL 2024",
+      "doi": "10.18653/v1/2024.acl-long.598",
+      "url": "https://aclanthology.org/2024.acl-long.598.pdf",
+      "access_status": "full_text_sections",
+      "verification_note": "Satisfaction rubrics and prediction; do not substitute target for intelligence.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "kim2025",
+      "authors": [
+        "Sangyeop Kim",
+        "Sohhyung Park",
+        "Jaewon Jung",
+        "Jinseok Kim",
+        "Sungzoon Cho"
+      ],
+      "year": 2025,
+      "title": "LLM-guided Plan and Retrieval: A Strategic Alignment for Interpretable User Satisfaction Estimation in Dialogue",
+      "venue": "NAACL 2025",
+      "doi": "10.18653/v1/2025.naacl-long.523",
+      "url": "https://arxiv.org/html/2503.04675v1",
+      "access_status": "full_text_sections",
+      "verification_note": "PRAISE framework; published record independently inspected.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "hou2025",
+      "authors": [
+        "Zhaoyi Joey Hou",
+        "Tanya Shourya",
+        "Yingfan Wang",
+        "Shamik Roy",
+        "Vinayshekhar Bannihatti Kumar",
+        "Rashmi Gangadharaiah"
+      ],
+      "year": 2025,
+      "title": "Multi-Faceted Evaluation of Tool-Augmented Dialogue Systems",
+      "venue": "arXiv preprint",
+      "doi": null,
+      "url": "https://arxiv.org/html/2510.19186v1",
+      "access_status": "full_text_sections",
+      "verification_note": "TRACE uses synthesized conversations; not real participant interaction data.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "dial2026",
+      "authors": [
+        "David AI"
+      ],
+      "year": 2026,
+      "title": "DIAL: Dialogue Interaction Assessment Leaderboard",
+      "venue": "Primary industry research report",
+      "doi": null,
+      "url": "https://research.withdavid.ai/blog/dial",
+      "access_status": "primary_full_report_sections",
+      "verification_note": "Mutable report accessed 2026-11-04. Peer-reviewed status not claimed; exact release date not established beyond indexed recency.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "voiceh2026",
+      "authors": [
+        "Askable Labs Team"
+      ],
+      "year": 2026,
+      "title": "Introducing VOICE-H (updated)",
+      "venue": "Primary industry research report",
+      "doi": null,
+      "url": "https://www.askablelabs.com/research/voice-preference-eval/",
+      "access_status": "primary_full_report",
+      "verification_note": "Updated 2026-10-13; first released 2026-07-24. TTS only; distinct people and rater sessions differ.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "hume2026",
+      "authors": [
+        "Hume AI"
+      ],
+      "year": 2026,
+      "title": "Real World VoiceEQ",
+      "venue": "Primary industry benchmark",
+      "doi": null,
+      "url": "https://www.hume.ai/benchmark",
+      "access_status": "primary_landing_page",
+      "verification_note": "Original /rw-voice-eq redirects; mutable landing page, not full methodological verification.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "jarvis2026",
+      "authors": [
+        "Voice Arena"
+      ],
+      "year": 2026,
+      "title": "Jarvis Bench",
+      "venue": "Primary industry benchmark",
+      "doi": null,
+      "url": "https://voicearena.com/jarvis-bench",
+      "access_status": "primary_indexed_excerpt_only",
+      "verification_note": "Opened page exposed no readable lines. Publication date not independently established; novelty lead only.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "henseler2015",
+      "authors": [
+        "Jörg Henseler",
+        "Christian M. Ringle",
+        "Marko Sarstedt"
+      ],
+      "year": 2015,
+      "title": "A new criterion for assessing discriminant validity in variance-based structural equation modeling",
+      "venue": "Journal of the Academy of Marketing Science",
+      "doi": "10.1007/s11747-014-0403-8",
+      "url": "https://link.springer.com/article/10.1007/s11747-014-0403-8",
+      "access_status": "full_text_sections",
+      "verification_note": "Online 2014-08-22; 2015 volume. Original HTMT proposal; thresholds are debated, not universal laws.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "ronkko2022",
+      "authors": [
+        "Mikko Rönkkö",
+        "Eunseong Cho"
+      ],
+      "year": 2022,
+      "title": "An Updated Guideline for Assessing Discriminant Validity",
+      "venue": "Organizational Research Methods",
+      "doi": "10.1177/1094428120968614",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/1094428120968614",
+      "access_status": "full_text_sections",
+      "verification_note": "Online 2020-11-23; 2022 volume. Critiques mechanical cutoff use and interprets HTMT as disattenuated composite correlation.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "montgomery2018",
+      "authors": [
+        "Jacob M. Montgomery",
+        "Brendan Nyhan",
+        "Michelle Torres"
+      ],
+      "year": 2018,
+      "title": "How Conditioning on Posttreatment Variables Can Ruin Your Experiment and What to Do about It",
+      "venue": "American Journal of Political Science",
+      "doi": "10.1111/ajps.12357",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/ajps.12357",
+      "access_status": "primary_abstract",
+      "verification_note": "Full-text button redirects to abstract; main analytical proof not independently inspected. Abstract directly supports posttreatment-adjustment and selection-bias caution.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "moussawi2019",
+      "authors": [
+        "Sara Moussawi",
+        "Marios Koufaris"
+      ],
+      "year": 2019,
+      "title": "Perceived Intelligence and Perceived Anthropomorphism of Personal Intelligent Agents: Scale Development and Validation",
+      "venue": "52nd Hawaii International Conference on System Sciences",
+      "doi": "10.24251/HICSS.2019.015",
+      "url": "https://pdfs.semanticscholar.org/3485/31ebb09088b64b111b30109570f9e1b5f6bd.pdf",
+      "access_status": "full_primary_paper_mirror_sections",
+      "verification_note": "Original proceedings PDF mirrored by Semantic Scholar; title/authors/handle matched AIS primary record https://aisel.aisnet.org/hicss-52/cl/ai_and_cognitive_assistants/4/. Definitions, methods and validation results read; original AIS download403.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "zhao2024",
+      "authors": [
+        "Yiming Zhao",
+        "Yu Chen",
+        "Yongqiang Sun",
+        "Xiao-Liang Shen"
+      ],
+      "year": 2024,
+      "title": "Understanding users' voice assistant exploration intention: unraveling the differential mechanisms of the multiple dimensions of perceived intelligence",
+      "venue": "Internet Research 34(6), 2096–2122",
+      "doi": "10.1108/INTR-10-2022-0807",
+      "url": "https://www.emerald.com/intr/article-abstract/34/6/2096/1218633/Understanding-users-voice-assistant-exploration?redirectedFrom=fulltext",
+      "access_status": "primary_abstract",
+      "verification_note": "Primary publisher abstract and metadata resolved; main text paywalled. Published2024-02-12. Cannot rule out unreported supplementary methods.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    },
+    {
+      "id": "kraemer2026",
+      "authors": [
+        "Nicole C. Krämer",
+        "Clara Strathmann",
+        "Aike C. Horstmann",
+        "Nils Köbis",
+        "Jessica M. Szczuka"
+      ],
+      "year": 2026,
+      "title": "Understanding the minds of voice assistants—How do perceived technical understanding and mind attribution influence trust and satisfaction over time?",
+      "venue": "Review of Communication 26(4), 237–254",
+      "doi": "10.1080/15358593.2026.2690371",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/15358593.2026.2690371",
+      "access_status": "primary_publisher_indexed_abstract",
+      "verification_note": "Publisher-indexed abstract/history/data statement verified; direct body remains blocked. Online2026-07-15. Data statement names OSF968XD, contents not inspected.",
+      "accessed": "2026-11-04",
+      "primary_source": true
+    }
+  ],
+  "unresolved_novelty_leads": [
+    {
+      "title": "Perceived intelligence and perceived anthropomorphism of personal intelligent agents: Scale development and validation",
+      "authors": [
+        "Sara Moussawi",
+        "Marios Koufaris"
+      ],
+      "year": 2019,
+      "doi": "10.24251/HICSS.2019.015",
+      "url": "https://hdl.handle.net/10125/59452",
+      "status": "resolved_full_primary_paper_mirror; see moussawi2019",
+      "resolved_on": "2026-11-04"
+    },
+    {
+      "title": "Understanding users' voice assistant exploration intention: unraveling the differential mechanisms of the multiple dimensions of perceived intelligence",
+      "year": 2024,
+      "doi": "10.1108/INTR-10-2022-0807",
+      "url": "https://doi.org/10.1108/INTR-10-2022-0807",
+      "status": "primary_abstract_verified; main_text_unresolved; see zhao2024",
+      "updated_on": "2026-11-04"
+    },
+    {
+      "title": "Understanding the minds of voice assistants—How do perceived technical understanding and mind attribution influence trust and satisfaction over time?",
+      "year": 2026,
+      "doi": "10.1080/15358593.2026.2690371",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/15358593.2026.2690371",
+      "status": "primary_publisher_indexed_abstract_verified; main_text_unresolved; see kraemer2026",
+      "updated_on": "2026-11-04"
+    }
+  ],
+  "access_definition": {
+    "full_text_sections": "Complete text accessible; relevant theory, methods, results or limitations inspected, not every citation or supplementary file independently checked.",
+    "publisher_indexed_full_text_sections": "Relevant primary publisher body available through search indexing; independent open request may fail.",
+    "primary_abstract": "Only primary abstract/record inspected; avoid detailed methods/results claims."
+  },
+  "source_summary_budget": "Narrative summaries are concise and intended to stay below 200 words per source; references contain metadata and verification notes, not reproduced abstracts.",
+  "novelty_followup_file": "research/novelty_followup.md"
+}
