@@ -1,0 +1,59 @@
+{
+  "retrieved_date": "2026-11-04",
+  "files": [
+    {
+      "path": "data/raw/komura2026/s003.xlsx",
+      "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0340449.s003&type=supplementary",
+      "bytes": 386912,
+      "sha256": "6e44183c66a391044665e32314808050152acb646971b4251544a8dc5972ff9f"
+    },
+    {
+      "path": "data/raw/komura2026/s002.docx",
+      "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0340449.s002&type=supplementary",
+      "bytes": 802668,
+      "sha256": "82750c69a5b2d5a90f2813ac9a1224509b61cad29d10c7ab3aa954021e0e7e8c"
+    },
+    {
+      "path": "data/raw/tan2026/DATASET.csv",
+      "url": "https://osf.io/download/4bxvc/",
+      "bytes": 163185,
+      "sha256": "e0e57c44059225645f3cb167cda2827e5a619c64dfbc790d9c5593a21d7718b2"
+    },
+    {
+      "path": "data/raw/tan2026/README.txt",
+      "url": "https://osf.io/download/q4gac/",
+      "bytes": 2092,
+      "sha256": "90405397f135135629a8e8fc4cd26cff881251a6061130be31808f9958cff261"
+    },
+    {
+      "path": "data/raw/beyond_voice/experiment1.sav",
+      "url": "https://osf.io/download/8a7uk/",
+      "bytes": 699435,
+      "sha256": "34a742a3bd6d1447eadeafab87a94dd121ba0453a8c7b43eb58d04ba10fe0db5"
+    },
+    {
+      "path": "data/raw/beyond_voice/experiment2.sav",
+      "url": "https://osf.io/download/7br2c/",
+      "bytes": 465757,
+      "sha256": "a920878af11d5be6acad0d3fb4c6e79cc9c62adeb0b35d0ffec676b92a14759d"
+    },
+    {
+      "path": "data/raw/beyond_voice/scale_items.pdf",
+      "url": "https://osf.io/download/vm2nu/",
+      "bytes": 117846,
+      "sha256": "02f4fdb6058f8832b64b6f53683469d8400d2fc5f302c438134ef26600ed2319"
+    },
+    {
+      "path": "data/raw/beyond_voice/preregistration1.pdf",
+      "url": "https://osf.io/download/h3mxr/",
+      "bytes": 187033,
+      "sha256": "ad02a0afc71c288f91642d2528d585d7abb3b82355e86d1095584371fa8d831e"
+    },
+    {
+      "path": "data/raw/beyond_voice/preregistration2.pdf",
+      "url": "https://osf.io/download/e2b5z/",
+      "bytes": 187578,
+      "sha256": "aa39f2a329a9ee743db695e3781f5c9542ec7b94e2fe298c9a6462c5e88d4c37"
+    }
+  ]
+}

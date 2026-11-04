@@ -1,0 +1,6 @@
+This project is an AI-assisted secondary empirical analysis prepared 2026-11-04.
+Source-study data and materials retain their original copyrights and licenses.
+No blanket license is assigned to externally sourced data by this project.
+See data/PROVENANCE.md and data/download_manifest.json for exact attribution.
+No new human-subject recruitment, external publication or journal acceptance is claimed.
+The portable bundle omits raw and row-level human data; its downloader obtains the pinned public originals.
