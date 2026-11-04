@@ -60,6 +60,16 @@ class IntegrityChecks(unittest.TestCase):
             q=pd.read_csv(ROOT/'results'/name);self.assertTrue((q[col]>=q.p-1e-12).all());self.assertTrue(q[col].between(0,1).all())
         q=pd.read_csv(ROOT/'results/cocreation_regressions.csv');self.assertNotIn('ai_notes',set(q.term))
 
+    def test_added_log_comparator_is_design_user(self):
+        m=pd.read_csv(ROOT/'results/cocreation_prediction_metrics.csv').set_index(['split','model'])
+        d=pd.read_csv(ROOT/'results/cocreation_increment_vs_design.csv')
+        self.assertEqual(len(d),4)
+        for _,r in d.iterrows():
+            self.assertEqual(r.comparator,'design_user')
+            a=m.loc[(r['split'],r.model)];b=m.loc[(r['split'],'design_user')]
+            self.assertAlmostEqual(r.r2_gain,a.r2-b.r2,places=11)
+            self.assertAlmostEqual(r.mae_reduction,b.mae-a.mae,places=11)
+
     def test_retraining_bootstrap_algebra_and_quantiles(self):
         meta=json.loads((ROOT/'results/voice_retraining_bootstrap.json').read_text())
         b=meta['bootstrap_draws_per_transfer'];self.assertGreaterEqual(b,1000)
