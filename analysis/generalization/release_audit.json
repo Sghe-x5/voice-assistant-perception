@@ -1,0 +1,107 @@
+{
+  "files": {
+    "train": {
+      "rows": 18480,
+      "columns": [
+        "q1",
+        "q2",
+        "source1",
+        "source2",
+        "previous_correct",
+        "belief_change"
+      ],
+      "missing": 0,
+      "labels": {
+        "0": 10510,
+        "1": 7970
+      },
+      "previous_correct": {
+        "1": 9134,
+        "0": 9346
+      },
+      "unique_q1": 9781,
+      "unique_q2": 9625,
+      "task_count": 79,
+      "duplicate_complete_rows": 1637,
+      "duplicate_conditioned_pairs": 2735,
+      "conditioned_pairs_with_both_labels": 1098
+    },
+    "test": {
+      "rows": 492,
+      "columns": [
+        "q1",
+        "q2",
+        "source1",
+        "source2",
+        "previous_correct",
+        "belief_change"
+      ],
+      "missing": 0,
+      "labels": {
+        "1": 211,
+        "0": 281
+      },
+      "previous_correct": {
+        "0": 245,
+        "1": 247
+      },
+      "unique_q1": 475,
+      "unique_q2": 458,
+      "task_count": 69,
+      "duplicate_complete_rows": 0,
+      "duplicate_conditioned_pairs": 0,
+      "conditioned_pairs_with_both_labels": 0
+    }
+  },
+  "overlap": {
+    "exact_conditioned_pairs": 0,
+    "exact_unconditioned_pairs": 0,
+    "test_q1_seen_in_either_training_role_rows": 432,
+    "test_q2_seen_in_either_training_role_rows": 429,
+    "test_rows_both_questions_seen": 384,
+    "test_rows_both_questions_unseen": 15,
+    "test_only_tasks": []
+  },
+  "limitations": [
+    "Exact text comparison only; no semantic/near-duplicate audit.",
+    "No respondent IDs, direct intelligence, original priors/posteriors or voice measurements in these six columns.",
+    "Repeated rows/discordant labels may be legitimate repeated judgments; nothing is deduplicated.",
+    "Selected aggregated test pairs do not estimate population prevalence or individual calibration."
+  ],
+  "provenance": {
+    "source": "https://github.com/keyonvafa/human-generalization-llms",
+    "commit": "526ba59931749c052fb88ff4a17d27a348bb149d",
+    "retrieved_date": "2026-11-05",
+    "publication": "https://proceedings.mlr.press/v235/vafa24a.html",
+    "rights_note": "Repository has MIT software license. Benchmark question rights remain with their sources; this project distributes no raw rows or question text.",
+    "files": {
+      "train": {
+        "path": "data/train.csv",
+        "sha256": "87f2ef62ba38eecbfcc188e4fcece44732bbf8a0478b0007530fe77636617468"
+      },
+      "test": {
+        "path": "data/test.csv",
+        "sha256": "61f811ebb577dc4ed6aaf4c3da7e63e87dc01b46cb07795c3ad5bd03c5160365"
+      }
+    }
+  },
+  "baseline_replication": {
+    "sklearn_version": "1.9.1",
+    "models": {
+      "previous_correct": {
+        "nll": 0.6656236187295786,
+        "auc": 0.5992815098412912,
+        "independent_nll_error": 0.0,
+        "independent_auc_error": 0.0
+      },
+      "previous_correct_and_same_task": {
+        "nll": 0.6365328810515257,
+        "auc": 0.6876254406233662,
+        "independent_nll_error": 1.1102230246251565e-16,
+        "independent_auc_error": 1.1102230246251565e-16
+      }
+    },
+    "scope": "Only two non-text baselines; no BERT/LLM reproduction, tuning on test, intervals or causal claims."
+  },
+  "script_sha256": "bf8f6f4d41a89a258e14db2039dadd11923d60ea61a2e7c869d0ec816f2d90a3"
+}

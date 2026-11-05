@@ -20,3 +20,26 @@ jobs:
         run: python -m unittest discover -s tests -p test_runner.py -v
       - name: Test authored process-transfer pilot without human data
         run: python -m unittest discover -s tests -p 'test_process_transfer*.py' -v
+      - name: Test multi-model comparison planning
+        run: python -m unittest discover -s tests -p test_comparison_plan.py -v
+      - name: Test natural-dialogue evidence and coding
+        run: python -m unittest discover -s tests -p test_fieldwork.py -v
+      - name: Test turn-level questions and input provenance
+        run: python -m unittest discover -s tests -p test_question_coding.py -v
+      - name: Test public-release audit accounting with synthetic rows
+        run: python -m unittest discover -s tests -p test_generalization_audit.py -v
+  source-derivation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-ci-data.txt
+      - name: Install minimal source-derivation dependencies
+        run: python -m pip install -r requirements-ci-data.txt
+      - name: Check dependency consistency
+        run: python -m pip check
+      - name: Test verified SPSS export regeneration without study downloads
+        run: python -m unittest discover -s tests -p test_download_data.py -v

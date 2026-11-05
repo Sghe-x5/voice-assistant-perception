@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-05
+
+- Addressed PR critique with codebook 0.2 / field-diary 1.1: turn/parameter evidence, pre-question input snapshots, familiarity and held-out strata; no invented legacy detail.
+- Added minimal-dependency CI for verified SAV/CSV regeneration and mismatched-source refusal.
+- Reopened novelty selection across mechanisms, corrected contingent clarification controls, and revised the manuscript around falsifiable process-evidence comparisons.
+
+- Completed both timer preflight cases in Qwen (visible Qwen3.7-Plus label, Auto, guest interface); retained the exact prompts and qualified example-generation ambiguity.
+- Active zero-budget core panel is ChatGPT, DeepSeek and Qwen. Claude/Gemini excluded from the current run by the user; search-enabled Perplexity stays separate.
+- Updated the planning example to three configurations; generated allocations remain prospective, not observations.
+
 ## 2026-11-04
 
 - Simplified onboarding; grouped supplementary analyses, documentation and paper.
@@ -13,3 +23,13 @@
 - Ordinal/lexical checks and a separate local pilot collection/import workflow.
 - Corrected the added-log comparator and clarified limits of CV uncertainty.
 - Curated repository excludes human records and working artifacts.
+# 2026-11-04 — fieldwork preparation and zero-cost preflight
+
+- Prepared neutral participant instructions, diary and interview guide for the
+  confirmed zero budget; no recruitment or new human observations claimed.
+- Added strict natural-dialogue preparation and descriptive coder-agreement
+  tooling, with separate developer/volunteer, modality and provenance strata.
+- Preserved original diary hashes in a private manifest; coder packets omit
+  brand/rating metadata and remain outside Git. Added failure cleanup and tests.
+- Ran six browser conversations across DeepSeek, guest ChatGPT and Perplexity;
+  reported stimulus ambiguity and access limits without ranking models.
