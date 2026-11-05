@@ -18,6 +18,8 @@ jobs:
         run: python -m unittest discover -s tests -p test_pilot_analysis.py -v
       - name: Test reproduction failure handling
         run: python -m unittest discover -s tests -p test_runner.py -v
+      - name: Test authored process-transfer pilot without human data
+        run: python -m unittest discover -s tests -p 'test_process_transfer*.py' -v
       - name: Test multi-model comparison planning
         run: python -m unittest discover -s tests -p test_comparison_plan.py -v
       - name: Test natural-dialogue evidence and coding
