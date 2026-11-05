@@ -1,5 +1,5 @@
 {
-  "search_cutoff": "2026-11-04",
+  "search_cutoff": "2026-11-05",
   "review_type": "targeted scoping review; not exhaustive systematic review",
   "references": [
     {
@@ -614,6 +614,330 @@
       "verification_note": "Primary methods and prediction sections inspected: 41 live Pepper participants; direct perception items and multimodal/log features; RF with 70/30 split and training CV. No participant-level public dataset link verified. Do not attribute this paper to Lubold2018.",
       "accessed": "2026-11-04",
       "primary_source": true
+    },
+    {
+      "id": "ashktorab2019",
+      "authors": [
+        "Zahra Ashktorab",
+        "Mohit Jain",
+        "Q. Vera Liao",
+        "Justin D. Weisz"
+      ],
+      "year": 2019,
+      "title": "Resilient Chatbots: Repair Strategy Preferences for Conversational Breakdowns",
+      "venue": "CHI 2019",
+      "doi": "10.1145/3290605.3300484",
+      "url": "https://research.ibm.com/publications/resilient-chatbots-repair-strategy-preferences-for-conversational-breakdowns",
+      "access_status": "primary_abstract_and_author_pdf_sections",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
+    },
+    {
+      "id": "madge2025",
+      "authors": [
+        "Chris Madge",
+        "Matthew Purver",
+        "Massimo Poesio"
+      ],
+      "year": 2025,
+      "title": "Referential ambiguity and clarification requests: comparing human and LLM behaviour",
+      "venue": "CRAC 2025",
+      "doi": null,
+      "url": "https://aclanthology.org/2025.crac-1.1/",
+      "access_status": "primary_abstract",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
+    },
+    {
+      "id": "zhang2025asktoact",
+      "authors": [
+        "Xuan Zhang",
+        "Yongliang Shen",
+        "Zhe Zheng",
+        "Linjuan Wu",
+        "Wenqi Zhang",
+        "Yuchen Yan",
+        "Qiuying Peng",
+        "Jun Wang",
+        "Weiming Lu"
+      ],
+      "year": 2025,
+      "title": "AskToAct: Enhancing LLMs Tool Use via Self-Correcting Clarification",
+      "venue": "EMNLP 2025",
+      "doi": null,
+      "url": "https://aclanthology.org/2025.emnlp-main.682.pdf",
+      "access_status": "primary_full_text_sections_and_appendix",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
+    },
+    {
+      "id": "dong2026voi",
+      "authors": [
+        "Yijiang River Dong",
+        "Tiancheng Hu",
+        "Zheng Hui",
+        "Caiqi Zhang",
+        "Ivan Vulić",
+        "Andreea Bobu",
+        "Nigel Collier"
+      ],
+      "year": 2026,
+      "title": "Value of Information: A Framework for Human-Agent Communication",
+      "venue": "arXiv preprint",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2601.06407",
+      "access_status": "primary_abstract",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
+    },
+    {
+      "id": "gulati2026",
+      "authors": [
+        "Anmol Gulati",
+        "Hariom Gupta",
+        "Elias Lumer",
+        "Sahil Sen",
+        "Vamse Kumar Subbiah"
+      ],
+      "year": 2026,
+      "title": "Ask Early, Ask Late, Ask Right: When Does Clarification Timing Matter for Long-Horizon Agents?",
+      "venue": "arXiv preprint",
+      "doi": null,
+      "url": "https://arxiv.org/html/2605.07937v1",
+      "access_status": "primary_full_text_sections",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
+    },
+    {
+      "id": "zheng2026clarify",
+      "authors": [
+        "Chengbo Zheng",
+        "Yujie Zheng",
+        "Qian Zhu",
+        "Shuai Ma"
+      ],
+      "year": 2026,
+      "title": "Is That Clear? The Impacts of Clarifying Questions on Human-LLM Interaction",
+      "venue": "arXiv preprint",
+      "doi": null,
+      "url": "https://arxiv.org/html/2611.01087v1",
+      "access_status": "primary_methods_and_measures",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
+    },
+    {
+      "id": "cox2023",
+      "authors": [
+        "Samuel Rhys Cox",
+        "Yi-Chieh Lee",
+        "Wei Tsang Ooi"
+      ],
+      "year": 2023,
+      "title": "Comparing How a Chatbot References User Utterances from Previous Chatting Sessions: An Investigation of Users' Privacy Concerns and Perceptions",
+      "venue": "HAI 2023",
+      "doi": "10.1145/3623809.3623875",
+      "url": "https://arxiv.org/html/2308.04879v1",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
+    },
+    {
+      "id": "mahmood2022",
+      "authors": [
+        "Amama Mahmood",
+        "Jeanie W Fung",
+        "Isabel Won",
+        "Chien-Ming Huang"
+      ],
+      "year": 2022,
+      "title": "Owning Mistakes Sincerely: Strategies for Mitigating AI Errors",
+      "venue": "CHI 2022",
+      "doi": "10.1145/3491102.3517565",
+      "url": "https://intuitivecomputing.github.io/publications/2022-chi-mahmood.pdf",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
+    },
+    {
+      "id": "losey2022",
+      "authors": [
+        "Dylan P. Losey",
+        "Andrea Bajcsy",
+        "Marcia K. O’Malley",
+        "Anca D. Dragan"
+      ],
+      "year": 2022,
+      "title": "Physical interaction as communication: Learning robot objectives online from human corrections",
+      "venue": "International Journal of Robotics Research",
+      "doi": "10.1177/02783649211050958",
+      "url": "https://journals.sagepub.com/doi/10.1177/02783649211050958",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
+    },
+    {
+      "id": "vafa2024",
+      "authors": [
+        "Keyon Vafa",
+        "Ashesh Rambachan",
+        "Sendhil Mullainathan"
+      ],
+      "year": 2024,
+      "title": "Do Large Language Models Perform the Way People Expect? Measuring the Human Generalization Function",
+      "venue": "ICML 2024",
+      "doi": null,
+      "url": "https://proceedings.mlr.press/v235/vafa24a.html",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
+    },
+    {
+      "id": "biswas2026belief",
+      "authors": [
+        "Shreyan Biswas",
+        "Alexander Erlei",
+        "Ujwal Gadiraju"
+      ],
+      "year": 2026,
+      "title": "Belief Updating and Delegation in Multi-Task Human-AI Interaction: Evidence from Controlled Simulations",
+      "venue": "CHI 2026",
+      "doi": "10.1145/3772318.3790775",
+      "url": "https://arxiv.org/html/2602.01986v1",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
+    },
+    {
+      "id": "dreyfuss2026",
+      "authors": [
+        "Bnaya Dreyfuss",
+        "Raphaël Raux"
+      ],
+      "year": 2026,
+      "title": "Human Learning about AI",
+      "venue": "arXiv preprint v3 (8 May 2026)",
+      "doi": null,
+      "url": "https://arxiv.org/html/2406.05408v3",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
+    },
+    {
+      "id": "pohl2026",
+      "authors": [
+        "Jan Pohl",
+        "Kristina Nikolovska",
+        "Dennis Küster",
+        "Francesco Maurelli",
+        "Arvid Kappas",
+        "Bernhard Hommel"
+      ],
+      "year": 2026,
+      "title": "Attribution of Selfhood Based on Simple Behavioral Cues: Toward a Pars-Pro-Toto Account",
+      "venue": "Cognitive Science 50:e70188",
+      "doi": "10.1111/cogs.70188",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/cogs.70188",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
+    },
+    {
+      "id": "horvitz1999",
+      "authors": [
+        "Eric Horvitz"
+      ],
+      "year": 1999,
+      "title": "Principles of Mixed-Initiative User Interfaces",
+      "venue": "CHI 1999",
+      "doi": null,
+      "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/chi99horvitz.pdf",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
+    },
+    {
+      "id": "liu2025initiative",
+      "authors": [
+        "Xingyu Bruce Liu",
+        "Shitao Fang",
+        "Weiyan Shi",
+        "Chien-Sheng Wu",
+        "Takeo Igarashi",
+        "Xiang Anthony Chen"
+      ],
+      "year": 2025,
+      "title": "Proactive Conversational Agents with Inner Thoughts",
+      "venue": "CHI 2025",
+      "doi": "10.1145/3706598.3713760",
+      "url": "https://arxiv.org/html/2501.00383v2",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
+    },
+    {
+      "id": "mai2023",
+      "authors": [
+        "Long Mai",
+        "Julie Carson-Berndsen"
+      ],
+      "year": 2023,
+      "title": "I already said that! Degenerating redundant questions in open-domain dialogue systems",
+      "venue": "ACL Student Research Workshop",
+      "doi": null,
+      "url": "https://aclanthology.org/2023.acl-srw.33.pdf",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
+    },
+    {
+      "id": "see2021",
+      "authors": [
+        "Abigail See",
+        "Christopher D. Manning"
+      ],
+      "year": 2021,
+      "title": "Understanding and predicting user dissatisfaction in a neural generative chatbot",
+      "venue": "SIGDIAL 2021",
+      "doi": null,
+      "url": "https://aclanthology.org/2021.sigdial-1.1.pdf",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
+    },
+    {
+      "id": "pranav2026",
+      "authors": [
+        "Pranav M R",
+        "Manuel Cherep",
+        "Pattie Maes",
+        "Nikhil Singh"
+      ],
+      "year": 2026,
+      "title": "Learning to Clarify Underspecified Intents Under Limited Interaction",
+      "venue": "arXiv preprint (3 October 2026)",
+      "doi": null,
+      "url": "https://arxiv.org/html/2610.04719v1",
+      "access_status": "primary_full_text_relevant_sections",
+      "accessed": "2026-11-05",
+      "primary_source": true,
+      "verification_note": "Methods/results/limitations inspected in adversarial review; exact scope and unresolved sources in novelty_review_2026-11-05.md. No claim of exhaustive reading or firstness."
     }
   ],
   "unresolved_novelty_leads": [

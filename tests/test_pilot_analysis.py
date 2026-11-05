@@ -130,7 +130,6 @@ class PilotAnalysisTests(unittest.TestCase):
                      lambda d: d['settings']['schedule'][0].update(sequence=2),
                      lambda d: d['settings']['schedule'][0].update(sequence=True),
                      lambda d: d['settings']['models']['A'].update(mode='speech'),
-                     lambda d: d['settings']['models']['A'].update(product='Claude'),
                      lambda d: d['settings']['models']['A'].update(mode='other', details=None),
                      lambda d: d.update(exported_at='invalid')]
         for mutation in mutations:
@@ -140,6 +139,16 @@ class PilotAnalysisTests(unittest.TestCase):
                 report = self.run_export(d)
                 self.assertEqual(report['records'], [])
                 self.assertGreater(report['summary']['n_errors'], 0)
+
+    def test_model_families_are_not_excluded(self):
+        for product in ('Claude', 'Anthropic Claude', 'GPT', 'DeepSeek', 'Gemini', 'Qwen'):
+            d = synthetic_export()
+            d['settings']['models']['A']['product'] = product
+            with self.subTest(product=product):
+                report = self.run_export(d)
+                self.assertEqual(report['summary']['n_errors'], 0)
+                self.assertEqual(len(report['records']), 12)
+                self.assertEqual(report['records'][0]['product'], product)
 
     def test_bad_record_ids_dates_confirmation_are_excluded(self):
         for update in [dict(task_id='S6'), dict(sequence=True), dict(experience_confirmed=False),

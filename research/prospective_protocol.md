@@ -1,4 +1,7 @@
-# Prospective live-voice validation protocol
+# Earlier prospective live-voice latency protocol
+
+**Design status update (2026-11-05):** Historical optional latency design. Current candidates and corrected estimands are in [the new design document](experiment_design_2026-11-05.md); clarification is not a predetermined flagship. No design has been executed or externally preregistered.
+
 
 Status: **design only; no participants recruited, no new observations collected, no ethics approval or public preregistration obtained for this protocol.** It is a specification for extending the completed public-data secondary analysis, not evidence that a live-user model has been validated. Version 2026-11-04.
 

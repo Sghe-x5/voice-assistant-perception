@@ -1,0 +1,9 @@
+{
+  "schema_version": "field-diary-1.1",
+  "participant_code": null,
+  "sampling_role": null,
+  "analysis_permission": false,
+  "redaction_reviewed": false,
+  "episodes": [],
+  "template_instructions": "Blank template, not observations. Episodes need existing metadata plus turns, turn_coverage, coding_partition, question_units. See docs/dialogue_codebook_ru.md for exact turn/snapshot/parameter schemas. Unknown assistant input is null; never infer it from user speech."
+}
