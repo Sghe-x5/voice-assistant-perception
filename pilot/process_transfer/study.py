@@ -11,9 +11,11 @@ import shutil
 from statistics import mean
 
 if __package__:
-    from .materials import VERSION, ARMS, CELLS, RATINGS, ORDERS, material
+    from .summaries import operation_score, paired_block, aggregate_blocks
+    from .materials import VERSION, ARMS, CELLS, ABS_CELLS, RATINGS, CHECKS, ORDERS, TOOLS, PROCESS_ORDERS, RESOURCE_SCOPE, material
 else:
-    from materials import VERSION, ARMS, CELLS, RATINGS, ORDERS, material
+    from summaries import operation_score, paired_block, aggregate_blocks
+    from materials import VERSION, ARMS, CELLS, ABS_CELLS, RATINGS, CHECKS, ORDERS, TOOLS, PROCESS_ORDERS, RESOURCE_SCOPE, material
 
 HERE = Path(__file__).resolve().parent
 
@@ -54,16 +56,20 @@ def make_plan(seed, role='developer_pilot', origin='synthetic_test', study_info=
     require(isinstance(study_info, str) and bool(study_info.strip()), 'Provide study contact, storage and withdrawal information')
     require(isinstance(batch_id, str) and re.fullmatch(r'[A-Za-z0-9_-]{1,80}', batch_id), 'Explicit safe batch ID required')
     allocations = []
-    for topic, variant, arm, order, measure_order in itertools.product(
-            ('schedule', 'inventory'), (0, 1), ARMS, range(4), ('ratings_first', 'forecasts_first')):
-        stimuli = material(topic, variant, arm)
-        allocations.append(dict(stimuli=stimuli, probe_order=[CELLS[i] for i in ORDERS[order]],
-                                measure_order=measure_order))
-    random.Random(seed).shuffle(allocations)
-    for i, a in enumerate(allocations, 1):
-        a['allocation_id'] = f'S{i:03d}'
-    instrument = {name: hashlib.sha256((HERE / name).read_bytes()).hexdigest()
-                  for name in ('materials.py', 'study.py', 'form.html')}
+    rng=random.Random(seed)
+    nuisance=list(itertools.product(('schedule','inventory'),(0,1),PROCESS_ORDERS,range(4),('ratings_first','forecasts_first')))
+    rng.shuffle(nuisance)
+    for block_index,(topic,variant,process_order,order,measure_order) in enumerate(nuisance,1):
+        cells=list(itertools.product(ARMS,TOOLS));rng.shuffle(cells)
+        for arm,tools in cells:
+            stimuli=material(topic,variant,arm,process_order)
+            # Order ABSOLUTE probes; relative labels change when the executor swaps.
+            ids={p['absolute_id']:p['id'] for p in stimuli['probes']}
+            allocations.append(dict(stimuli=stimuli,block_id=f'B{block_index:03d}',future_tools=tools,
+                probe_order=[ids[ABS_CELLS[i]] for i in ORDERS[order]],measure_order=measure_order))
+    for i,a in enumerate(allocations,1):a['allocation_id']=f'S{i:03d}'
+    instrument={name:hashlib.sha256((HERE/name).read_bytes()).hexdigest()
+                for name in ('materials.py','study.py','summaries.py','form.html')}
     plan = dict(version=VERSION, status='planned_not_observed', seed=seed,
                 sampling_role=role, evidence_origin=origin, study_info=study_info, batch_id=batch_id,
                 instrument_sha256=instrument, allocations=allocations)
@@ -73,6 +79,8 @@ def make_plan(seed, role='developer_pilot', origin='synthetic_test', study_info=
 
 def check_plan(plan):
     require(isinstance(plan, dict) and type(plan.get('seed')) is int, 'Invalid plan')
+    unsigned={k:v for k,v in plan.items() if k!='plan_sha256'}
+    require(digest(unsigned)==plan.get('plan_sha256'),'Plan hash does not match its exact JSON values')
     require(plan == make_plan(plan['seed'], plan.get('sampling_role'), plan.get('evidence_origin'),
                              plan.get('study_info'), plan.get('batch_id')),
             'Plan differs from this frozen material version')
@@ -84,6 +92,7 @@ def participant_payload(plan, allocation):
     return dict(version=VERSION, plan_sha256=plan['plan_sha256'], allocation_id=a['allocation_id'],
                 sampling_role=plan['sampling_role'], evidence_origin=plan['evidence_origin'], study_info=plan['study_info'],
                 measure_order=a['measure_order'], probe_order=a['probe_order'], ratings=RATINGS,
+                future_tools=a['future_tools'],resource_scope=RESOURCE_SCOPE,
                 exposure={k: s[k] for k in ('request', 'process', 'final')},
                 probes=[{'id': p['id'], 'request': p['request']} for p in s['probes']])
 
@@ -102,7 +111,8 @@ def build(output, seed, role='developer_pilot', origin='human_observer', study_i
             (output / (a['allocation_id'] + '.html')).write_text(
                 template.replace('/*CONFIG*/null', payload), encoding='utf-8')
         (output / 'ASSIGNMENT.txt').write_text(
-            '64 prospective slots, not participants or a sample-size justification.\n'
+            f"{len(plan['allocations'])} prospective slots, not participants or a sample-size justification.\n"
+            'Each consecutive four-slot block balances executor assignment and future resources.\n'
             'Assign sequentially without inspecting condition. One person, one unused slot.\n'
             'Keep assignment/person mapping separately and private. Do not reassign abandoned slots.\n'
             'Each HTML is self-contained. Do not give participants the plan or other slots.\n', encoding='utf-8')
@@ -137,8 +147,12 @@ def validate_export(d, plan):
     require(all(optional_integer(v, 1, 7) for v in d['ratings'].values()), 'Ratings must be integers 1..7 or null')
     require(isinstance(d['forecasts'], dict) and set(d['forecasts']) == set(CELLS), 'Exact forecast cells required')
     require(all(optional_integer(v, 0, 100) for v in d['forecasts'].values()), 'Forecasts must be integers 0..100 or null')
-    require(isinstance(d['checks'], dict) and set(d['checks']) == {'source', 'tools', 'clarity'}, 'Exact check fields required')
-    require(d['checks']['source'] in (None, 'assistant', 'component', 'unknown'), 'Invalid source check')
+    require(isinstance(d['checks'], dict) and set(d['checks']) == set(CHECKS), 'Exact check fields required')
+    for key in ('dependency_source','selection_source'):
+        require(d['checks'][key] in (None,'assistant','component','unknown'),'Invalid source check')
+    require(d['checks']['allocation'] in (None,'assigned','chosen','unknown'),'Invalid allocation check')
+    comment=d['checks']['interpretation']
+    require(comment is None or (isinstance(comment,str) and bool(comment.strip()) and len(comment)<=2000),'Invalid interpretation text')
     require(d['checks']['tools'] in (None, 'available', 'unavailable', 'unknown'), 'Invalid tool check')
     require(optional_integer(d['checks']['clarity'], 1, 7), 'Invalid clarity')
     expected = sequence(a)
@@ -148,8 +162,11 @@ def validate_export(d, plan):
     require('exposure' in d['completed'], 'No completed exposure')
     if d['status'] == 'complete':
         require(d['completed'] == expected, 'Complete export must finish every page (answers may be null)')
+    else:
+        require(len(d['completed'])<len(expected),'Partial export cannot have every page completed')
     for key in RATINGS:
-        require('ratings' in d['presented'] or d['ratings'][key] is None, 'Rating from unseen page')
+        page='checks' if key=='credit' else 'ratings'
+        require(page in d['presented'] or d['ratings'][key] is None, 'Rating from unseen page')
     for cell in CELLS:
         require(cell in d['presented'] or d['forecasts'][cell] is None, 'Forecast from unseen page')
     require('checks' in d['presented'] or all(v is None for v in d['checks'].values()), 'Checks from unseen page')
@@ -159,12 +176,6 @@ def validate_export(d, plan):
 def sequence(a):
     probes = a['probe_order']
     return ['exposure'] + (['ratings'] + probes if a['measure_order'] == 'ratings_first' else probes + ['ratings']) + ['checks']
-
-
-def operation_score(values):
-    if any(values[c] is None for c in CELLS):
-        return None
-    return (values['same_same'] + values['different_same'] - values['same_different'] - values['different_different']) / 2
 
 
 def analyze(plan, documents):
@@ -181,9 +192,9 @@ def analyze(plan, documents):
     groups = defaultdict(list)
     # Measurement order stays separate: forecasts can change later intelligence ratings.
     for d, a in rows:
-        groups[(d['sampling_role'], d['evidence_origin'], a['measure_order'])].append((d, a))
+        groups[(d['sampling_role'], d['evidence_origin'], a['measure_order'],a['future_tools'],a['stimuli']['demonstration_order'])].append((d,a))
     strata = []
-    for (role, origin, order), group in sorted(groups.items()):
+    for (role,origin,order,tools,process_order),group in sorted(groups.items()):
         arms = {}
         for arm in ARMS:
             armrows = [(d, a) for d, a in group if a['stimuli']['arm'] == arm]
@@ -198,34 +209,48 @@ def analyze(plan, documents):
             scores = [operation_score(d['forecasts']) for d, _ in armrows]
             known = [s for s in scores if s is not None]
             summary['operation_specificity'] = dict(n=len(known), mean=mean(known) if known else None)
-            expected_source = 'assistant' if arm == 'derived' else 'component'
-            summary['checks'] = {key: dict(Counter(str(d['checks'][key]) for d, _ in armrows)) for key in ('source', 'tools', 'clarity')}
-            summary['source_check_correct'] = sum(d['checks']['source'] == expected_source for d, _ in armrows)
-            summary['tools_check_correct'] = sum(d['checks']['tools'] == 'unavailable' for d, _ in armrows)
-            summary['exemplars'] = dict(Counter(a['stimuli']['exposure_id'] for _, a in armrows))
+            owner=arm.removeprefix('assistant_')
+            summary['checks']={key:dict(Counter(str(d['checks'][key]) for d,_ in armrows)) for key in CHECKS if key!='interpretation'}
+            summary['source_checks_both_correct']=sum(
+                d['checks']['dependency_source']==('assistant' if owner=='dependency' else 'component') and
+                d['checks']['selection_source']==('assistant' if owner=='selection' else 'component') for d,_ in armrows)
+            summary['tools_check_correct']=sum(d['checks']['tools']==tools for d,_ in armrows)
+            summary['allocation_check_correct']=sum(d['checks']['allocation']=='assigned' for d,_ in armrows)
+            summary['n_interpretations']=sum(d['checks']['interpretation'] is not None for d,_ in armrows)
+            summary['exemplars']=dict(Counter(a['stimuli']['exposure_id'] for _,a in armrows))
             arms[arm] = summary
-        # Weight each available exemplar equally; require both arms within it.
-        paired = []
-        for eid in sorted({a['stimuli']['exposure_id'] for _, a in group}):
-            scores = {arm: [operation_score(d['forecasts']) for d, a in group
-                           if a['stimuli']['exposure_id'] == eid and a['stimuli']['arm'] == arm
-                           and operation_score(d['forecasts']) is not None] for arm in ARMS}
-            if all(scores.values()):
-                paired.append(dict(exposure_id=eid, n_derived=len(scores['derived']), n_supplied=len(scores['supplied']),
-                                   difference=mean(scores['derived'])-mean(scores['supplied'])))
-        strata.append(dict(sampling_role=role, evidence_origin=origin, measure_order=order, arms=arms,
-                           matched_exemplar_differences=paired,
-                           balanced_difference=mean(x['difference'] for x in paired) if paired else None,
-                           matched_exemplar_coverage=f'{len(paired)}/4'))
+        expected={a['block_id'] for a in plan['allocations'] if a['measure_order']==order
+                  and a['future_tools']==tools and a['stimuli']['demonstration_order']==process_order}
+        paired=[]
+        for bid in sorted({a['block_id'] for _,a in group}):
+            by_arm={arm:[(d,a) for d,a in group if a['block_id']==bid and a['stimuli']['arm']==arm] for arm in ARMS}
+            if all(by_arm.values()):paired.append(dict(block_id=bid,**paired_block(by_arm)))
+        strata.append(dict(sampling_role=role,evidence_origin=origin,measure_order=order,future_tools=tools,
+            demonstration_order=process_order,arms=arms,matched_blocks=paired,**aggregate_blocks(paired,len(expected))))
+    availability=[]
+    for role,origin,order,process_order in sorted({(x['sampling_role'],x['evidence_origin'],x['measure_order'],x['demonstration_order']) for x in strata}):
+        two={x['future_tools']:x for x in strata if (x['sampling_role'],x['evidence_origin'],x['measure_order'],x['demonstration_order'])==(role,origin,order,process_order)}
+        if set(two)!=set(TOOLS):continue
+        blocks={t:{b['block_id']:b for b in two[t]['matched_blocks'] if b['diagnostic']['crossover'] is not None} for t in TOOLS}
+        common=sorted(set(blocks['unavailable'])&set(blocks['available']))
+        diff=mean(blocks['unavailable'][b]['diagnostic']['crossover']-blocks['available'][b]['diagnostic']['crossover'] for b in common) if common else None
+        expected=two['available']['n_planned_blocks']
+        availability.append(dict(sampling_role=role,evidence_origin=origin,measure_order=order,demonstration_order=process_order,
+            n_common_blocks=len(common),n_planned_blocks=expected,common_block_unavailable_minus_available=diff,
+            full_design_unavailable_minus_available=diff if len(common)==expected else None,
+            interpretation='Descriptive resource moderation on identical complete blocks; not mediation or independent capability proof.'))
     return dict(version=VERSION, analysis='descriptive_feasibility_only', n_exports=len(rows),
-                plan_sha256=plan['plan_sha256'], strata=strata,
+                plan_sha256=plan['plan_sha256'],strata=strata,availability_comparisons=availability,
                 limitations=['No human results exist until actual consented exports are supplied.',
                     'No power, inferential intervals, calibrated probabilities or population effects are established.',
                     'Unknown answers remain missing; complete-case differences may be selected.',
                     'Checks are reported, not used for post-treatment exclusion.',
                     'Partial allocation blocks need not balance arms, order or exemplars.',
                     'Condition/source metadata are attestations, not authentication or proof of human authorship.',
-                    'Probability-scale interaction alone cannot distinguish halo with ceiling/floor effects.'])
+                    'Crossover and even opposite arm ordering can arise under heterogeneous global shifts; no unique mechanism identified.',
+                    'Both operations are observed: role swap identifies allocation effects, not isolated authorship or actual capability.',
+                    'Missing-answer bounds concern submitted exports only, not unsubmitted participants.',
+                    'Resource availability cannot affect ratings taken before its disclosure.'])
 
 
 def main():
