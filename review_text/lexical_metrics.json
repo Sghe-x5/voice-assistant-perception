@@ -1,0 +1,156 @@
+{
+  "participant": {
+    "train_mean": {
+      "MAE": 0.6347061408975511,
+      "RMSE": 0.7883875143603478,
+      "R2": -0.006623995637532465,
+      "n": 142
+    },
+    "design_user_logs": {
+      "MAE": 0.6337439162996277,
+      "RMSE": 0.7889266066012757,
+      "R2": -0.008001107044746325,
+      "n": 142
+    },
+    "design_user_logs_ai_text": {
+      "MAE": 0.633643067584906,
+      "RMSE": 0.7888717482100562,
+      "R2": -0.007860928234564746,
+      "n": 142
+    },
+    "delta_text_vs_design": {
+      "MAE": -0.00010084871472171297,
+      "RMSE": -5.48583912194367e-05,
+      "R2": 0.0001401788101815793
+    },
+    "chosen_alphas_design": [
+      {
+        "outer_fold": 0,
+        "alpha": 100.0,
+        "n_train": 113,
+        "n_test": 29
+      },
+      {
+        "outer_fold": 1,
+        "alpha": 1000.0,
+        "n_train": 113,
+        "n_test": 29
+      },
+      {
+        "outer_fold": 2,
+        "alpha": 1000.0,
+        "n_train": 114,
+        "n_test": 28
+      },
+      {
+        "outer_fold": 3,
+        "alpha": 100.0,
+        "n_train": 114,
+        "n_test": 28
+      },
+      {
+        "outer_fold": 4,
+        "alpha": 1000.0,
+        "n_train": 114,
+        "n_test": 28
+      }
+    ],
+    "chosen_alphas_text": [
+      {
+        "outer_fold": 0,
+        "alpha": 100.0,
+        "n_train": 113,
+        "n_test": 29
+      },
+      {
+        "outer_fold": 1,
+        "alpha": 1000.0,
+        "n_train": 113,
+        "n_test": 29
+      },
+      {
+        "outer_fold": 2,
+        "alpha": 1000.0,
+        "n_train": 114,
+        "n_test": 28
+      },
+      {
+        "outer_fold": 3,
+        "alpha": 100.0,
+        "n_train": 114,
+        "n_test": 28
+      },
+      {
+        "outer_fold": 4,
+        "alpha": 1000.0,
+        "n_train": 114,
+        "n_test": 28
+      }
+    ]
+  },
+  "condition": {
+    "train_mean": {
+      "MAE": 0.6457860547770853,
+      "RMSE": 0.7971143917067264,
+      "R2": -0.02903252956398017,
+      "n": 142
+    },
+    "design_user_logs": {
+      "MAE": 0.6378790234648319,
+      "RMSE": 0.791222606915716,
+      "R2": -0.01387678312750018,
+      "n": 142
+    },
+    "design_user_logs_ai_text": {
+      "MAE": 0.6376233453041079,
+      "RMSE": 0.7910115765216622,
+      "R2": -0.013336024351762399,
+      "n": 142
+    },
+    "delta_text_vs_design": {
+      "MAE": -0.0002556781607240266,
+      "RMSE": -0.00021103039405379054,
+      "R2": 0.0005407587757377819
+    },
+    "chosen_alphas_design": [
+      {
+        "outer_fold": 0,
+        "alpha": 1000.0,
+        "n_train": 92,
+        "n_test": 50
+      },
+      {
+        "outer_fold": 1,
+        "alpha": 1000.0,
+        "n_train": 102,
+        "n_test": 40
+      },
+      {
+        "outer_fold": 2,
+        "alpha": 1000.0,
+        "n_train": 90,
+        "n_test": 52
+      }
+    ],
+    "chosen_alphas_text": [
+      {
+        "outer_fold": 0,
+        "alpha": 1000.0,
+        "n_train": 92,
+        "n_test": 50
+      },
+      {
+        "outer_fold": 1,
+        "alpha": 1000.0,
+        "n_train": 102,
+        "n_test": 40
+      },
+      {
+        "outer_fold": 2,
+        "alpha": 1000.0,
+        "n_train": 90,
+        "n_test": 52
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+split,model,comparator,r2_gain,mae_reduction
+participant,telemetry,design_user,0.004684694969592272,0.005716120311602341
+participant,telemetry_adoption,design_user,0.02190378838000434,0.028009188007997423
+condition,telemetry,design_user,-0.013145846308872316,-0.0024424313994507152
+condition,telemetry_adoption,design_user,0.00019688681319721813,0.005554499845744947
