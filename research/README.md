@@ -1,16 +1,28 @@
-# Research notes
+# Методы и литература
 
-- [Analysis specification](analysis_protocol.md): questions and exploratory extensions.
-- [Literature](literature_review.md) and [metadata](references_literature.json): sources and access levels.
-- [Closest-prior follow-up](novelty_followup.md): novelty boundaries.
-- [Training sensitivity](retraining_sensitivity.md): paired resampling with refitting.
-- [Prospective protocol](prospective_protocol.md): proposed live-voice study, not completed fieldwork.
-- [Reproduction audit](verification.md): clean-environment checks, repairs and limits.
+## Анализ опубликованных данных
 
-[Data provenance](../data/PROVENANCE.md) records source rights and units.
-Working audit trails and AI conversations are intentionally not versioned.
+- [Что показали расчёты](../results/README.md).
 
-- [Vafa public-release audit](../analysis/generalization/README.md): actual CSV structure, overlap and two reproduced baselines; a different endpoint from intelligence.
+- [Вопросы и методы](analysis_protocol.md).
+- [Обзор литературы](literature_review.md) и [библиография](references_literature.json).
+- [Близкие исследования измерения интеллекта](related_measurement_studies.md).
+- [Устойчивость к повторному обучению](retraining_sensitivity.md).
+- [Проверка расчётов](verification.md).
+- [Данные Vafa et al. и воспроизведение двух моделей](../analysis/generalization/README.md).
 
-- [Adversarial novelty review, 5 November](novelty_review_2026-11-05.md): competing mechanisms and close primary sources.
-- [Corrected prospective designs](experiment_design_2026-11-05.md): state-contingent clarification controls and process-specific capability inference.
+## Новое исследование
+
+- [План работы](../docs/research_plan_ru.md) — текущие вопросы, требования к корпусу и порядок действий.
+- [Программа исследований](experiments.md) — измерение, предсказание, варианты экспериментов и перенос.
+- [Сравнение объяснений](research_questions.md) — память, ошибки, инициатива,
+  ожидания, усилия и общее впечатление; первоисточники и нерешённые вопросы.
+- [Заготовка сценарного эксперимента](../pilot/process_transfer/PROTOCOL.md) — реализованный дизайн.
+- [Вариант эксперимента с уточнениями](clarification_design.md) и
+  [ближайшие работы](clarification_literature.md).
+- [Предварительный план живого голосового исследования](prospective_protocol.md).
+
+Программа и протоколы новых исследований не описывают собранные человеческие данные.
+Старые предложения не заменяют условия реализованного сценарного пилота.
+Даты и ограничения поиска указаны в обзорах; они не являются исчерпывающей
+проверкой всех публикаций.

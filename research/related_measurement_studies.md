@@ -1,12 +1,12 @@
-# Targeted follow-up of the three nearest unresolved novelty leads
+# Related studies of perceived intelligence
 
-Date: 2026-11-04. This follow-up resolves one complete primary paper and two primary abstracts. It does not certify worldwide priority. It leaves the original literature review and manuscript unchanged; updated access metadata are in `references_literature.json`.
+Date: 2026-11-04. One full primary paper and two primary abstracts were inspected. Access metadata are recorded in `references_literature.json`; incomplete access limits conclusions about overlap with our study.
 
 ## Moussawi and Koufaris (2019)
 
 **Access:** Complete ten-page proceedings paper found at a Semantic Scholar-hosted PDF mirror. Its title, authors, HICSS proceedings header and handle match the [primary AIS record](https://aisel.aisnet.org/hicss-52/cl/ai_and_cognitive_assistants/4/). Read definition, instrument development, pilot, validation, model results and discussion sections (pp. 115–122). The AIS download itself returned 403.
 
-**Evidence and comparison:** Perceived intelligence covers attributed efficiency, usefulness, autonomy, goal-directed output and language ability. The final five items concern speed, command understanding, understandable communication, information processing and useful answers. The work develops the scales in a 249-record pilot and evaluates them in a separate 232-record student sample. It uses SmartPLS, correlations/reliability and bootstrapped path inference in a continuance-of-use network. Thus, independent-sample measurement validation and relationships with adjacent perceptions already exist. The paper does **not** report the current project's comparison of held-out intelligence prediction from logs/design/user features versus concurrent evaluation ratings. Its reported explanatory variance concerns fitted survey constructs, not transported individual predictions from a fixed first-sample model. Our contribution must therefore remain the specific information-source/selection audit, not the first validated scale or first use of another sample.
+**Evidence and comparison:** Perceived intelligence covers attributed efficiency, usefulness, autonomy, goal-directed output and language ability. The final five items concern speed, command understanding, understandable communication, information processing and useful answers. The work develops the scales in a 249-record pilot and evaluates them in a separate 232-record student sample. It uses SmartPLS, correlations/reliability and bootstrapped path inference in a continuance-of-use network. Thus, independent-sample measurement validation and relationships with adjacent perceptions already exist. The paper does **not** report the current project's comparison of held-out intelligence prediction from logs/design/user features versus concurrent evaluation ratings. Its reported explanatory variance concerns fitted survey constructs, not transported individual predictions from a fixed first-sample model. Our contribution must therefore remain the specific comparison of information sources and participant selection, not the first validated scale or first use of another sample.
 
 Primary paper: [Moussawi & Koufaris, full PDF](https://pdfs.semanticscholar.org/3485/31ebb09088b64b111b30109570f9e1b5f6bd.pdf). DOI: [10.24251/HICSS.2019.015](https://doi.org/10.24251/HICSS.2019.015).
 
@@ -26,11 +26,11 @@ DOI: [10.1108/INTR-10-2022-0807](https://doi.org/10.1108/INTR-10-2022-0807).
 
 Primary record: [Krämer et al.](https://www.tandfonline.com/doi/full/10.1080/15358593.2026.2690371). DOI: [10.1080/15358593.2026.2690371](https://doi.org/10.1080/15358593.2026.2690371).
 
-## Decision for the manuscript
+## Implications for the project
 
 The targeted follow-up found no demonstrated duplicate of the precise completed analysis. That is a bounded search result, not proof of priority. The current narrow wording—new reproducible secondary evidence on measurement overlap, predictive information availability, transport and selection sensitivity—remains defensible. A new scale, first multidimensional model, first independent-sample validation, first longitudinal perception model, or universally validated behavioral metric would not be defensible.
 
-The 2019 paper should be cited when describing pre-existing assistant-intelligence scales; it is no longer an inaccessible full-text lead. The other two can be cited for their verified high-level designs with abstract-only limitations. Detailed claims about their omitted methods should await full-text access. No purchases, author contacts, new dataset analysis, or access-control bypass was undertaken.
+The 2019 paper should be cited when describing pre-existing assistant-intelligence scales; it is no longer an inaccessible full-text lead. The other two can be cited for their verified high-level designs with abstract-only limitations. Detailed claims about their omitted methods should await full-text access.
 
 ## Targeted search trace
 

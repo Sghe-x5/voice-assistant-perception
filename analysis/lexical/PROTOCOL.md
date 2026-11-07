@@ -30,5 +30,5 @@ semantic or independent human content measurements remain untested. All records
 are from the original human study; no AI-generated outcomes are added.
 
 The script must stay offline, preserve originals, write only under analysis/lexical,
-and expose joins, folds, selected penalties and predictions. Existing article
+and expose joins, folds, selected penalties and predictions. Existing primary-analysis
 results are not overwritten. Any generated code is reviewed before execution.

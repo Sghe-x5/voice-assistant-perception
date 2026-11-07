@@ -2,7 +2,6 @@
 /*
 !/README.md
 !/AGENTS.md
-!/CHANGELOG.md
 !/NOTICE.txt
 !/requirements.txt
 !/.gitignore
@@ -15,7 +14,6 @@
 /scripts/*
 !/scripts/download_data.py
 !/scripts/run_all.py
-!/scripts/build_manuscript.py
 !/data/
 /data/*
 !/data/PROVENANCE.md
@@ -24,10 +22,6 @@
 /models/*
 !/models/voice_design_user.joblib
 !/models/voice_model_card.json
-!/paper/
-/paper/*
-!/paper/manuscript.pdf
-!/paper/README.md
 !/results/
 /results/*
 !/results/README.md
@@ -47,7 +41,7 @@
 !/research/verification.md
 !/research/literature_review.md
 !/research/references_literature.json
-!/research/novelty_followup.md
+!/research/related_measurement_studies.md
 !/research/analysis_protocol.md
 !/research/prospective_protocol.md
 !/research/retraining_sensitivity.md
@@ -84,7 +78,6 @@
 !/docs/
 /docs/*
 !/docs/architecture.md
-!/docs/roadmap.md
 !/docs/contributing.md
 !/analysis/
 /analysis/*
@@ -102,15 +95,12 @@
 !/pilot/process_transfer/diagnostics.py
 !/pilot/process_transfer/README.md
 !/pilot/process_transfer/PROTOCOL.md
-!/pilot/process_transfer/REVIEW.md
 !/pilot/process_transfer/summaries.py
-!/pilot/process_transfer/REVIEW_RESPONSE.md
 !/pilot/plan_comparison.py
 !/pilot/model_panel.example.json
 !/docs/research_plan_ru.md
 !/docs/dialogue_codebook_ru.md
-!/docs/audit_2026-11-04.md
-!/research/novelty_matrix_2026-11-04.md
+!/research/clarification_literature.md
 !/pilot/fieldwork.py
 !/pilot/field_diary.template.json
 !/pilot/free_model_probe.md
@@ -119,12 +109,13 @@
 !/research/free_probe_preflight.md
 !/requirements-ci-data.txt
 !/pilot/question_coding.py
-!/docs/review_resolution_2026-11-05.md
-!/research/novelty_review_2026-11-05.md
-!/research/experiment_design_2026-11-05.md
+!/research/research_questions.md
+!/research/clarification_design.md
 !/analysis/generalization/
 /analysis/generalization/*
 !/analysis/generalization/README.md
 !/analysis/generalization/audit_release.py
 !/analysis/generalization/source_manifest.json
 !/analysis/generalization/release_audit.json
+
+!/research/experiments.md

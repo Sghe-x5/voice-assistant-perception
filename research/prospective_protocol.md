@@ -1,9 +1,12 @@
-# Earlier prospective live-voice latency protocol
+# Дополнительный вариант: задержки в голосовом взаимодействии
 
-**Design status update (2026-11-05):** Historical optional latency design. Current candidates and corrected estimands are in [the new design document](experiment_design_2026-11-05.md); clarification is not a predetermined flagship. No design has been executed or externally preregistered.
+Предварительный вариант исследования задержек, 4 ноября 2026; сбор не проводился.
+Этот подробный вариант не выбран для ближайшего запуска. Он сохраняет решения
+по записи событий, случайному назначению условий и расчёту выборки, которые могут
+пригодиться позже. Общие приоритеты — в [программе исследований](experiments.md).
 
 
-Status: **design only; no participants recruited, no new observations collected, no ethics approval or public preregistration obtained for this protocol.** It is a specification for extending the completed public-data secondary analysis, not evidence that a live-user model has been validated. Version 2026-11-04.
+Status: **design only; no participants recruited, no new observations collected, no ethics approval or public preregistration obtained for this protocol.** It is a specification for extending the existing public-data analyses, not evidence that a live-user model has been validated. Version 2026-11-04.
 
 ## Scientific target
 

@@ -1,10 +1,13 @@
-# Novelty stress test: dialogue context, clarification and perceived intelligence
+# Dialogue context and clarification: related studies
 
-**Historical snapshot, superseded for direction selection by [the broader 5 November review](novelty_review_2026-11-05.md).**
+Дополнение к [основному обзору вопросов](research_questions.md). Часть источников
+повторяется, но здесь также сохранены отдельные работы о структуре уточнений
+и ограничения доступа. Это не выбор уточнений как главного направления.
+При объединении с общим обзором нужно сохранить эти сведения.
 
 Search cutoff: 4 November 2026. Targeted search, **not exhaustive systematic review**. The proposed new study is unperformed. “Not demonstrated in inspected sections” never means “absent from all literature.” Publication status and access are recorded separately from plausibility.
 
-| Primary source | Existing contribution that constrains us | Access in this audit / consequence |
+| Primary source | Existing contribution that constrains us | Available evidence and implications |
 |---|---|---|
 | [Walker et al., PARADISE (1997)](https://aclanthology.org/P97-1035.pdf) | Models dialogue performance using success and interaction costs | Primary paper. We cannot claim first regression from dialogue features |
 | [Walker, Kamm & Litman (2000)](https://doi.org/10.1017/S1351324900002503) | Tests predictive generalization across spoken systems/conditions/users | Publisher abstract. Cross-system evaluation itself is not new |
@@ -38,4 +41,4 @@ AskToAct explicitly limits any claim that “redundant clarification” is a new
 
 Queries included `voice assistant perceived intelligence latency clarification user study`, `conversational agent perceived intelligence repair clarification response timing`, `clarification perceived intelligence`, `clarification questions ambiguity user study LLM 2025 2026`, `conversational repair burden LLM`, `redundant clarification questions user study`, `grounding perceived intelligence voice assistant`, exact titles/DOIs and references from Zheng/Gulati. Searches encountered other leads (KAPA, PITCH, confirmation scheduling and health context seeking); these remain follow-up literature, not exhaustively cleared novelty threats.
 
-The audit also reopened the existing bibliography's primary URLs. URL/title verification is weaker than full claim-level reading; paywalled and unreadable records remain limited. The earlier bibliography's access statements describe earlier work and are not silently upgraded to this audit's full-text verification.
+The source check also reopened the existing bibliography's primary URLs. URL/title verification is weaker than full claim-level reading; paywalled and unreadable records remain limited. The earlier bibliography's access statements describe earlier work and are not silently upgraded to the 4 November full-text check.

@@ -1,4 +1,4 @@
-# Independent statistical review
+# Проверка арифметики и структуры шкал
 
 Review date: 2026-11-04. Read-only inputs; all numerical review outputs stay here.
 No project analysis module
@@ -18,7 +18,7 @@ training/test draw in each direction without calling project functions. It also
 checks co-creation point metrics and source-level latency contrasts/Holm correction.
 Results and tolerances are in `arithmetic_checks.json`.
 
-Two small comparator audits accompany the arithmetic checks:
+Two comparator checks accompany the arithmetic checks:
 
 - `median_baseline.csv`: training-median constant for the MAE comparison; 4,000
   fixed-predictor test-participant bootstrap draws, seed 130719. These intervals
@@ -26,7 +26,7 @@ Two small comparator audits accompany the arithmetic checks:
 - `cocreation_increment_vs_design.csv`: point differences against design/user
   predictions, the comparator specified in E4. No inferential CI is asserted.
 
-The **one substantial additional analysis** is `ordinal_structure.py`: marginal
+The additional analysis is `ordinal_structure.py`: marginal
 thresholds estimated from observed category frequencies, pairwise polychoric
 correlations under a bivariate-normal latent-response assumption, then standardized
 one- and two-factor off-diagonal ULS fits. Pearson ULS fits use the same criterion
