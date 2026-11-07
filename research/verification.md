@@ -1,41 +1,48 @@
-# Reproduction audit — 2026-11-04
+# Проверка данных и расчётов
 
-The repository was exported without ignored local files into a separate temporary
-directory. A new Python 3.12 virtual environment was created without system site
-packages; requirements were installed and all nine pinned public originals were
-downloaded again. Every SHA256 matched. The initial clean run completed, and all
-ten versioned aggregate CSVs matched the working results numerically exactly.
+Проверки 4–5 ноября 2026 относятся к воспроизводимости вычислений. Они не
+подтверждают причинное объяснение восприятия умности и не заменяют новые данные.
 
-The audited version was then run with generated results removed and verified raw
-inputs retained. All nine stages completed, including the lexical check, 1,000
-training/test bootstrap draws per voice-transfer direction, 32 tests and PDF
-generation. Aggregate row labels, missingness and values were checked again.
-The final editorial revision was rebuilt in the same isolated environment.
+## Исходные данные и повторный расчёт
 
-## Repairs
+В отдельной копии проекта с Python 3.12 повторно загружены девять исходных файлов.
+Их SHA256 совпали с манифестом. Выполнены три основных анализа, сравнение наборов
+признаков, повторное обучение с 1 000 bootstrap-выборками в каждом направлении
+переноса голосовых экспериментов, лексическая модель и сборка статьи.
 
-- The runner now records the current attempt before executing steps and persists
-  preflight/child/launch failures. A failed rerun cannot retain the previous
-  successful status in the tested failure cases. Four focused tests cover this.
-- An explicit regression check protects E4's design/user comparator.
-- The full pipeline includes the lexical check; the paper now reports its tiny
-  point increments and the limits of that representation.
-- The direct Novikova et al. (2017) predecessor is cited with verified authors and
-  methods. Predicting perceived intelligence from interaction features is not a
-  new general idea.
-- The article explicitly notes the latency source's 63 post-assignment fidelity
-  exclusions; a full intention-to-treat effect cannot be recovered from that release.
-- The abstract no longer implies calibrated inferential support for text-CV gains.
+Первый запуск в чистом окружении воспроизвёл десять сохранённых сводных CSV
+численно точно. В последующем пересчёте один дополнительный коэффициент Spearman
+в строке `E2_to_E1_all_shifted/survey_augmented` отличался на `0.0000191390797`;
+MAE, RMSE и R² согласовались до машинной точности. Причина различия рангов
+не установлена; округлённые основные таблицы и выводы не изменились.
 
-## Scope
+[Отдельный расчёт](../analysis/validation/README.md) сверяет статистики CFA,
+коэффициенты и ошибки регрессий, прогнозы, метрики и поправку Holm. Максимальные
+расхождения при проверке были порядка 10⁻¹²–10⁻¹⁴. Порядковая проверка использует
+полихорические корреляции и ULS в два этапа; это не полноценная ordinal CFA/WLSMV.
 
-The audit covers source integrity, executable reproduction, numeric consistency,
-document generation, tested pilot-parser behavior and repository contents.
-Raw questionnaires, individual predictions, transcripts, credentials, caches and
-working conversations are not tracked. Local model inputs and failure handling
-are tested; this is not a comprehensive security certification.
+Производные CSV заново создаются из проверенных SAV, в том числе при повторном
+запуске без загрузки. Тесты проверяют восстановление CSV и отказ при неверном
+хеше. Полный запуск записывает ошибки текущей попытки, чтобы не оставлять
+статус предыдущего успешного расчёта.
 
-Successful tests do not establish construct validity, representative sampling,
-causal mechanisms, measurement invariance, CV interval coverage or worldwide
-priority. No new human pilot was collected. The broader live-voice research goal
-remains unvalidated; see TASKS.md and the prospective protocol.
+## Ограничения данных
+
+- Соседние анкетные оценки не являются объективными причинными факторами.
+- Перенос между двумя видеоэкспериментами не подтверждает перенос на живую речь.
+- Слабая модель на счётчиках событий или TF-IDF не опровергает роль смысла ответа.
+- В источнике с задержками исключены 63 участника после назначения условий;
+  полный эффект назначения по опубликованным данным восстановить нельзя.
+- Три неоднозначных ID этого источника разобраны отдельно в
+  [описании данных](../data/PROVENANCE.md).
+
+## Проверки инструментов
+
+Тесты покрывают обработку дневников, различие речи и доступного ассистенту входа,
+совместимость версий, формы, импорт, пропуски и расчёт сравнений. Для сценарного
+пилота есть [отдельные команды](../pilot/process_transfer/README.md).
+Автоматические ответы обозначаются `synthetic_test` и не считаются людьми.
+
+Точное состояние автоматических проверок относится к конкретному коммиту и
+доступно в GitHub Actions. Успешный запуск не доказывает валидность шкалы,
+репрезентативность выборки, новый психологический механизм или первенство работы.

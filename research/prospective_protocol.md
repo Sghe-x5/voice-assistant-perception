@@ -1,6 +1,8 @@
 # Earlier prospective live-voice latency protocol
 
-**Design status update (2026-11-05):** Historical optional latency design. Current candidates and corrected estimands are in [the new design document](experiment_design_2026-11-05.md); clarification is not a predetermined flagship. No design has been executed or externally preregistered.
+Предварительный вариант исследования задержек, 4 ноября 2026; сбор не проводился.
+Текущий реализованный инструмент — [сценарный пилот](../pilot/process_transfer/PROTOCOL.md).
+Этот документ сохраняет отдельное предложение для будущего живого голосового исследования.
 
 
 Status: **design only; no participants recruited, no new observations collected, no ethics approval or public preregistration obtained for this protocol.** It is a specification for extending the completed public-data secondary analysis, not evidence that a live-user model has been validated. Version 2026-11-04.

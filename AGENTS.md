@@ -1,7 +1,7 @@
 # Instructions for coding and research agents
 
 Start with [README.md](README.md), [architecture](docs/architecture.md) and
-[research priorities](docs/roadmap.md). Use Python 3.12. Current status: secondary
+[research priorities](docs/research_plan_ru.md). Use Python 3.12. Current status: secondary
 analysis is reproducible; a general live-voice model remains unvalidated.
 
 ## Work autonomously, without losing scientific meaning
