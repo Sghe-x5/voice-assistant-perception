@@ -47,9 +47,9 @@ before changing shared files; preserve others' work and avoid force-pushes.
 See [contributing](docs/contributing.md). Do not launch unnecessary parallel work.
 
 Run checks appropriate to the actual change. For numerical changes, independently
-check predictions and update results/article together. For path changes, verify
-entrypoints and a clean-checkout run. For PDF edits, rebuild after results exist
-and inspect affected pages. Confirm the final diff meets the original requirement;
+check predictions and update results and their interpretation together. For path
+changes, verify entrypoints and a clean-checkout run. Confirm the final diff
+meets the original requirement;
 a green test is not proof of a scientific claim.
 
 Never commit raw questionnaires, participant exports, transcripts, credentials,

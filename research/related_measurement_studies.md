@@ -26,7 +26,7 @@ DOI: [10.1108/INTR-10-2022-0807](https://doi.org/10.1108/INTR-10-2022-0807).
 
 Primary record: [Krämer et al.](https://www.tandfonline.com/doi/full/10.1080/15358593.2026.2690371). DOI: [10.1080/15358593.2026.2690371](https://doi.org/10.1080/15358593.2026.2690371).
 
-## Decision for the manuscript
+## Implications for the project
 
 The targeted follow-up found no demonstrated duplicate of the precise completed analysis. That is a bounded search result, not proof of priority. The current narrow wording—new reproducible secondary evidence on measurement overlap, predictive information availability, transport and selection sensitivity—remains defensible. A new scale, first multidimensional model, first independent-sample validation, first longitudinal perception model, or universally validated behavioral metric would not be defensible.
 

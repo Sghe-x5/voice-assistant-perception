@@ -2,6 +2,8 @@
 
 ## Анализ опубликованных данных
 
+- [Что показали расчёты](../results/README.md).
+
 - [Вопросы и методы](analysis_protocol.md).
 - [Обзор литературы](literature_review.md) и [библиография](references_literature.json).
 - [Близкие исследования измерения интеллекта](related_measurement_studies.md).

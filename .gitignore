@@ -14,7 +14,6 @@
 /scripts/*
 !/scripts/download_data.py
 !/scripts/run_all.py
-!/scripts/build_manuscript.py
 !/data/
 /data/*
 !/data/PROVENANCE.md
@@ -23,10 +22,6 @@
 /models/*
 !/models/voice_design_user.joblib
 !/models/voice_model_card.json
-!/paper/
-/paper/*
-!/paper/manuscript.pdf
-!/paper/README.md
 !/results/
 /results/*
 !/results/README.md
