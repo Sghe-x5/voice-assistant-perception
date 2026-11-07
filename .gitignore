@@ -117,3 +117,5 @@
 !/analysis/generalization/audit_release.py
 !/analysis/generalization/source_manifest.json
 !/analysis/generalization/release_audit.json
+
+!/research/experiments.md

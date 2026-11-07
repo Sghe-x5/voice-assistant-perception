@@ -41,22 +41,14 @@ and rerun all products on the new version; do not compare an improved prompt
 against the earlier response from another product. This preflight motivates
 stimulus revision, not a positive result for the proposed psychological theory.
 
-## Access boundaries
+## Recorded access and limits
 
-On 4 November Claude remained at login and Gemini reported unavailability in
-the current country. On 5 November the user excluded both from the current
-run. The user completed Qwen's age gate; two fresh timer conversations then
-completed while the interface still displayed Log in. Qwen's model label and
-Auto mode are observed UI metadata, not independently verified backend identity.
-An unsent draft contained accidental extra characters; it was replaced with
-the exact protocol prompt before the first accepted send. No prompt revision,
-regeneration or best-response selection was used. These access states are not
-failed intelligence tasks. No location change or paid upgrade was used.
+Claude and Gemini were not included in these eight conversations because access
+was unavailable in the tested setup. These are access limitations, not failed
+intelligence tasks. The product modes in the table are observed interface metadata;
+the exact model behind a service was not independently verified.
 
-Local evidence contains only task-related captures where feasible; full
-signed-in page capture was blocked by automatic approval review because it
-could include unrelated chat history. Narrow visible answer elements were used
-instead. Conversation/account URLs, screenshots with private account metadata,
-raw chat dumps and unrelated history are not committed. A local evidence
-manifest keeps hashes of the relevant captures; the report is deliberately not
-presented as a publicly reproducible API benchmark.
+The repository contains aggregate observations, not account URLs, private chat
+histories or raw exports. Local records cover the task-related visible answers.
+This small manual check is not a publicly reproducible API benchmark. New model
+comparisons require fresh access checks, a fixed protocol and recorded settings.
