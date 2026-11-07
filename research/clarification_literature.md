@@ -5,7 +5,7 @@
 и ограничения доступа. Это не выбор уточнений как главного направления.
 При объединении с общим обзором нужно сохранить эти сведения.
 
-Search cutoff: 4 November 2026. Targeted search, **not exhaustive systematic review**. The proposed new study is unperformed. “Not demonstrated in inspected sections” never means “absent from all literature.” Publication status and access are recorded separately from plausibility.
+Targeted search, **not exhaustive systematic review**. The proposed new study is unperformed. “Not demonstrated in inspected sections” never means “absent from all literature.” Publication status and access are recorded separately from plausibility.
 
 | Primary source | Existing contribution that constrains us | Available evidence and implications |
 |---|---|---|
@@ -41,4 +41,4 @@ AskToAct explicitly limits any claim that “redundant clarification” is a new
 
 Queries included `voice assistant perceived intelligence latency clarification user study`, `conversational agent perceived intelligence repair clarification response timing`, `clarification perceived intelligence`, `clarification questions ambiguity user study LLM 2025 2026`, `conversational repair burden LLM`, `redundant clarification questions user study`, `grounding perceived intelligence voice assistant`, exact titles/DOIs and references from Zheng/Gulati. Searches encountered other leads (KAPA, PITCH, confirmation scheduling and health context seeking); these remain follow-up literature, not exhaustively cleared novelty threats.
 
-The source check also reopened the existing bibliography's primary URLs. URL/title verification is weaker than full claim-level reading; paywalled and unreadable records remain limited. The earlier bibliography's access statements describe earlier work and are not silently upgraded to the 4 November full-text check.
+The source check also reopened the existing bibliography's primary URLs. URL/title verification is weaker than full claim-level reading; paywalled and unreadable records remain limited. The earlier bibliography's access statements describe earlier work and are not silently upgraded to the full-text check.

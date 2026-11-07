@@ -1,7 +1,7 @@
-# First zero-cost browser preflight
+# Browser preflight
 
 Dates: 4–5 November 2026 (Europe/Moscow). **Agent-run technical observations, not human perception data.**
-No paid API or new subscription was used. Eight new text conversations were
+Eight new text conversations were
 completed: two timer prompts in four products (six on 4 November; two Qwen
 conversations on 5 November). One ChatGPT conversation also
 received the protocol's single follow-up with the missing value. No subjective
