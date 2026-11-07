@@ -14,3 +14,5 @@ jobs:
           python-version: '3.12'
       - name: Compile source
         run: python -m compileall -q src scripts tests pilot review_stats review_text
+      - name: Test pilot import without human data
+        run: python -m unittest discover -s tests -p test_pilot_analysis.py -v
