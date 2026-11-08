@@ -40,7 +40,7 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument('--download',action='store_true');a=ap.parse_args()
     env=os.environ.copy();env.update(MPLCONFIGDIR=str(ROOT/'.mplconfig'),XDG_CACHE_HOME=str(ROOT/'tmp/cache'),OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',LOKY_MAX_CPU_COUNT='1')
     (ROOT/'results').mkdir(exist_ok=True);(ROOT/'results/figures').mkdir(exist_ok=True);(ROOT/'data/processed').mkdir(parents=True,exist_ok=True)
-    commands=[['scripts/download_data.py']+([] if a.download else ['--verify-only']),['src/analyze_voice.py'],['src/analyze_cocreation.py'],['src/analyze_latency.py'],['src/compare_information.py'],['src/bootstrap_voice_training.py'],['review_text/analyze_lexical.py'],['-m','unittest','discover','-s','tests','-v'],['scripts/build_manuscript.py']]
+    commands=[['scripts/download_data.py']+([] if a.download else ['--verify-only']),['src/analyze_voice.py'],['src/analyze_cocreation.py'],['src/analyze_latency.py'],['src/compare_information.py'],['src/bootstrap_voice_training.py'],['analysis/lexical/analyze_lexical.py'],['-m','unittest','discover','-s','tests','-v'],['scripts/build_manuscript.py']]
     run_commands(ROOT,commands,env)
-    print('Reproduction complete. See output/research_paper.pdf',flush=True)
+    print('Reproduction complete. See paper/manuscript.pdf',flush=True)
 if __name__=='__main__':main()

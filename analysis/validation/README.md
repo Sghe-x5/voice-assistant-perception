@@ -7,8 +7,8 @@ is imported or executed by these scripts.
 Run from the repository root with the existing pinned environment:
 
 ```sh
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python review_stats/check_arithmetic.py
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python review_stats/ordinal_structure.py
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python analysis/validation/check_arithmetic.py
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python analysis/validation/ordinal_structure.py
 ```
 
 `check_arithmetic.py` independently reconstructs voice composites, HTMT, CFA

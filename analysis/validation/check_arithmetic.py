@@ -10,7 +10,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Ridge
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(__file__).resolve().parent
 ITEMS = [f'intelligence_{j}' for j in range(1, 6)] + [f'Credibility_{j}' for j in range(1, 6)]
 SEED = 20261104

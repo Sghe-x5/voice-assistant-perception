@@ -21,7 +21,7 @@ quality. It does not refute the broader missing-content explanation or establish
 equivalence. No p-values or CV confidence intervals were invented. Outcomes are
 the original human ratings, not model-generated ratings.
 
-Run `python review_text/analyze_lexical.py` from the root. Input hashes and chosen
+Run `python analysis/lexical/analyze_lexical.py` from the root. Input hashes and chosen
 penalties are saved. All point metrics were independently recalculated from the
 142 unique-ID prediction rows; maximum discrepancy is below 1e−12. See
 the saved prediction rows and metrics. No new dependency or paid API is needed.

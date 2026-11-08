@@ -12,7 +12,7 @@ import pandas as pd
 from scipy.special import ndtr, ndtri
 from scipy.optimize import minimize_scalar, least_squares
 from numpy.polynomial.legendre import leggauss
-from check_arithmetic import load, htmt, ITEMS
+from check_arithmetic import ROOT, load, htmt, ITEMS
 
 OUT=Path(__file__).resolve().parent
 TRI=np.triu_indices(10,1)
@@ -94,7 +94,7 @@ def main():
               max_exchange_change=max(p['exchange_change'] for p in pairs),threshold_tail_cutoff=10,
               assumptions=['Ordered responses arise by thresholding bivariate-normal latent responses','Local independence within the one/two-factor approximations','Participant rows treated as independent within released study'],
               limitations=['Not WLSMV/ULSMV: no robust chi-square, RMSEA, parameter CI or invariance test','Pooled marginal correlation is not a multigroup invariance test','Sparse pairwise cells are counted; no category merging or PD repair','Same-data structure sensitivity, not a new validation population','Additional analysis chosen after inspecting continuous CFA; exploratory'],
-              input_sha256={f'experiment{i}.sav.csv':hashlib.sha256((OUT.parent/f'data/raw/beyond_voice/experiment{i}.sav.csv').read_bytes()).hexdigest() for i in (1,2)})
+              input_sha256={f'experiment{i}.sav.csv':hashlib.sha256((ROOT/f'data/raw/beyond_voice/experiment{i}.sav.csv').read_bytes()).hexdigest() for i in (1,2)})
     (OUT/'ordinal_metadata.json').write_text(json.dumps(meta,indent=2)); print(table.to_string(index=False))
 
 if __name__=='__main__': main()

@@ -2,6 +2,9 @@
 
 ## 2026-11-04
 
+- Simplified onboarding; grouped supplementary analyses, documentation and paper.
+- Removed the unused tool-specific pointer; added collaboration guidance.
+
 - Verified clean-environment reproduction; added failure-safe run records and tests.
 - Integrated the lexical baseline and clarified prior work and source exclusions.
 
