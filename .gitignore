@@ -46,6 +46,7 @@
 !/research/
 /research/*
 !/research/README.md
+!/research/verification.md
 !/research/literature_review.md
 !/research/references_literature.json
 !/research/novelty_followup.md

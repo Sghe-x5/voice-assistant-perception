@@ -596,6 +596,24 @@
       "verification_note": "Publisher-indexed abstract/history/data statement verified; direct body remains blocked. Online2026-07-15. Data statement names OSF968XD, contents not inspected.",
       "accessed": "2026-11-04",
       "primary_source": true
+    },
+    {
+      "id": "novikova2017",
+      "authors": [
+        "Jekaterina Novikova",
+        "Christian Dondrup",
+        "Ioannis Papaioannou",
+        "Oliver Lemon"
+      ],
+      "year": 2017,
+      "title": "Sympathy Begins with a Smile, Intelligence Begins with a Word: Use of Multimodal Features in Spoken Human-Robot Interaction",
+      "venue": "Robo-NLP workshop at ACL 2017 / arXiv",
+      "doi": "10.48550/arXiv.1706.02757",
+      "url": "https://arxiv.org/html/1706.02757v1",
+      "access_status": "full_text_sections",
+      "verification_note": "Primary methods and prediction sections inspected: 41 live Pepper participants; direct perception items and multimodal/log features; RF with 70/30 split and training CV. No participant-level public dataset link verified. Do not attribute this paper to Lubold2018.",
+      "accessed": "2026-11-04",
+      "primary_source": true
     }
   ],
   "unresolved_novelty_leads": [

@@ -1,8 +1,8 @@
 # Exploratory lexical-content increment
 
 Specified 2026-11-04 after the original results and independent critique. This is
-not a preregistration or an untouched confirmatory sample. DeepSeek is drafting
-implementation; local review and execution are required before any result claim.
+not a preregistration or an untouched confirmatory sample. This specification preceded implementation. DeepSeek drafted the code; local
+review, repairs and execution are recorded in SUMMARY.md.
 
 Question: do recorded AI idea texts contain incremental linear predictive
 information about the actual human intelligence rating beyond the existing
