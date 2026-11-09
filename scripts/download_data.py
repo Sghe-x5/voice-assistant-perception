@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Download the pinned public study files, verify SHA256, and extract SPSS CSVs.
 Run from any directory: python scripts/download_data.py [--verify-only].
+--verify-only forbids downloads; derived SPSS CSVs are still rebuilt from verified originals.
 Source rights remain with original authors; this does not relicense the raw data.
 """
 import argparse, hashlib, json, pathlib, urllib.request
@@ -20,11 +21,16 @@ def main():
         digest=hashlib.sha256(target.read_bytes()).hexdigest()
         if digest!=item['sha256']: raise RuntimeError('Checksum mismatch: '+item['path'])
         print('verified',item['path'])
-    if not args.verify_only:
-        import pyreadstat
-        for study in (1,2):
-            target=ROOT/f'data/raw/beyond_voice/experiment{study}.sav'
-            df,_=pyreadstat.read_sav(target);df.to_csv(str(target)+'.csv',index=False)
+    # The analyses consume CSV derivatives. Hashing the SAV without rebuilding
+    # the CSV would allow stale or modified input to pass an offline replay.
+    import pyreadstat
+    for study in (1,2):
+        target=ROOT/f'data/raw/beyond_voice/experiment{study}.sav'
+        df,_=pyreadstat.read_sav(target)
+        csv_target=pathlib.Path(str(target)+'.csv')
+        temporary=csv_target.with_suffix('.csv.tmp')
+        df.to_csv(temporary,index=False)
+        temporary.replace(csv_target)
     print('All pinned files verified.')
 
 if __name__=='__main__':main()
