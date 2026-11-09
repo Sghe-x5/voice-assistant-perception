@@ -614,6 +614,122 @@
       "verification_note": "Primary methods and prediction sections inspected: 41 live Pepper participants; direct perception items and multimodal/log features; RF with 70/30 split and training CV. No participant-level public dataset link verified. Do not attribute this paper to Lubold2018.",
       "accessed": "2026-11-04",
       "primary_source": true
+    },
+    {
+      "id": "ashktorab2019",
+      "authors": [
+        "Zahra Ashktorab",
+        "Mohit Jain",
+        "Q. Vera Liao",
+        "Justin D. Weisz"
+      ],
+      "year": 2019,
+      "title": "Resilient Chatbots: Repair Strategy Preferences for Conversational Breakdowns",
+      "venue": "CHI 2019",
+      "doi": "10.1145/3290605.3300484",
+      "url": "https://research.ibm.com/publications/resilient-chatbots-repair-strategy-preferences-for-conversational-breakdowns",
+      "access_status": "primary_abstract_and_author_pdf_sections",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
+    },
+    {
+      "id": "madge2025",
+      "authors": [
+        "Chris Madge",
+        "Matthew Purver",
+        "Massimo Poesio"
+      ],
+      "year": 2025,
+      "title": "Referential ambiguity and clarification requests: comparing human and LLM behaviour",
+      "venue": "CRAC 2025",
+      "doi": null,
+      "url": "https://aclanthology.org/2025.crac-1.1/",
+      "access_status": "primary_abstract",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
+    },
+    {
+      "id": "zhang2025asktoact",
+      "authors": [
+        "Xuan Zhang",
+        "Yongliang Shen",
+        "Zhe Zheng",
+        "Linjuan Wu",
+        "Wenqi Zhang",
+        "Yuchen Yan",
+        "Qiuying Peng",
+        "Jun Wang",
+        "Weiming Lu"
+      ],
+      "year": 2025,
+      "title": "AskToAct: Enhancing LLMs Tool Use via Self-Correcting Clarification",
+      "venue": "EMNLP 2025",
+      "doi": null,
+      "url": "https://aclanthology.org/2025.emnlp-main.682.pdf",
+      "access_status": "primary_full_text_sections_and_appendix",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
+    },
+    {
+      "id": "dong2026voi",
+      "authors": [
+        "Yijiang River Dong",
+        "Tiancheng Hu",
+        "Zheng Hui",
+        "Caiqi Zhang",
+        "Ivan Vulić",
+        "Andreea Bobu",
+        "Nigel Collier"
+      ],
+      "year": 2026,
+      "title": "Value of Information: A Framework for Human-Agent Communication",
+      "venue": "arXiv preprint",
+      "doi": null,
+      "url": "https://arxiv.org/abs/2601.06407",
+      "access_status": "primary_abstract",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
+    },
+    {
+      "id": "gulati2026",
+      "authors": [
+        "Anmol Gulati",
+        "Hariom Gupta",
+        "Elias Lumer",
+        "Sahil Sen",
+        "Vamse Kumar Subbiah"
+      ],
+      "year": 2026,
+      "title": "Ask Early, Ask Late, Ask Right: When Does Clarification Timing Matter for Long-Horizon Agents?",
+      "venue": "arXiv preprint",
+      "doi": null,
+      "url": "https://arxiv.org/html/2605.07937v1",
+      "access_status": "primary_full_text_sections",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
+    },
+    {
+      "id": "zheng2026clarify",
+      "authors": [
+        "Chengbo Zheng",
+        "Yujie Zheng",
+        "Qian Zhu",
+        "Shuai Ma"
+      ],
+      "year": 2026,
+      "title": "Is That Clear? The Impacts of Clarifying Questions on Human-LLM Interaction",
+      "venue": "arXiv preprint",
+      "doi": null,
+      "url": "https://arxiv.org/html/2611.01087v1",
+      "access_status": "primary_methods_and_measures",
+      "accessed": "2026-11-04",
+      "primary_source": true,
+      "verification_note": "Added in independent research audit; see novelty_matrix_2026-11-04.md. No priority claim."
     }
   ],
   "unresolved_novelty_leads": [

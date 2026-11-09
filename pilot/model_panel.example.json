@@ -1,0 +1,6 @@
+[
+  {"model_id":"gpt-config-1","product":"GPT","version":"unknown — replace with observed version before collection","mode":"text","details":"Planning example only; no API call or voice capability implied"},
+  {"model_id":"claude-config-1","product":"Claude","version":"unknown — replace with observed version before collection","mode":"text","details":"Planning example only; no API call or voice capability implied"},
+  {"model_id":"deepseek-config-1","product":"DeepSeek","version":"unknown — replace with observed version before collection","mode":"text","details":"Planning example only; no API call or voice capability implied"},
+  {"model_id":"qwen-config-1","product":"Qwen","version":"unknown — replace with observed version before collection","mode":"text","details":"Planning example only; no API call or voice capability implied"}
+]
