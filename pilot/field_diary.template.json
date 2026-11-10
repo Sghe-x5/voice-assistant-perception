@@ -1,0 +1,9 @@
+{
+  "schema_version": "field-diary-1.0",
+  "participant_code": null,
+  "sampling_role": null,
+  "analysis_permission": false,
+  "redaction_reviewed": false,
+  "episodes": [],
+  "template_instructions": "Blank template, not observations. An episode needs episode_id, session_id, evidence_origin, modality, recorded_at (entry timestamp with timezone), product, version, goal, context, account, smartness (human 1..7 or null). See docs/fieldwork_start_ru.md."
+}

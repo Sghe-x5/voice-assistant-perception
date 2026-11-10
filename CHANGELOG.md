@@ -13,3 +13,13 @@
 - Ordinal/lexical checks and a separate local pilot collection/import workflow.
 - Corrected the added-log comparator and clarified limits of CV uncertainty.
 - Curated repository excludes human records and working artifacts.
+# 2026-11-04 — fieldwork preparation and zero-cost preflight
+
+- Prepared neutral participant instructions, diary and interview guide for the
+  confirmed zero budget; no recruitment or new human observations claimed.
+- Added strict natural-dialogue preparation and descriptive coder-agreement
+  tooling, with separate developer/volunteer, modality and provenance strata.
+- Preserved original diary hashes in a private manifest; coder packets omit
+  brand/rating metadata and remain outside Git. Added failure cleanup and tests.
+- Ran six browser conversations across DeepSeek, guest ChatGPT and Perplexity;
+  reported stimulus ambiguity and access limits without ranking models.
