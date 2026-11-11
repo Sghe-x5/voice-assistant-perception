@@ -1,0 +1,5 @@
+# Direct dependencies for synthetic SAV/CSV regression tests only.
+# Keep these three versions aligned with requirements.txt.
+numpy==2.3.5
+pandas==2.2.3
+pyreadstat==1.3.7

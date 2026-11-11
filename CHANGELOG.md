@@ -2,6 +2,10 @@
 
 ## 2026-11-05
 
+- Addressed PR critique with codebook 0.2 / field-diary 1.1: turn/parameter evidence, pre-question input snapshots, familiarity and held-out strata; no invented legacy detail.
+- Added minimal-dependency CI for verified SAV/CSV regeneration and mismatched-source refusal.
+- Reopened novelty selection across mechanisms, corrected contingent clarification controls, and revised the manuscript around falsifiable process-evidence comparisons.
+
 - Completed both timer preflight cases in Qwen (visible Qwen3.7-Plus label, Auto, guest interface); retained the exact prompts and qualified example-generation ambiguity.
 - Active zero-budget core panel is ChatGPT, DeepSeek and Qwen. Claude/Gemini excluded from the current run by the user; search-enabled Perplexity stays separate.
 - Updated the planning example to three configurations; generated allocations remain prospective, not observations.
