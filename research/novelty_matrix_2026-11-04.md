@@ -1,5 +1,7 @@
 # Novelty stress test: dialogue context, clarification and perceived intelligence
 
+**Historical snapshot, superseded for direction selection by [the broader 5 November review](novelty_review_2026-11-05.md).**
+
 Search cutoff: 4 November 2026. Targeted search, **not exhaustive systematic review**. The proposed new study is unperformed. “Not demonstrated in inspected sections” never means “absent from all literature.” Publication status and access are recorded separately from plausibility.
 
 | Primary source | Existing contribution that constrains us | Access in this audit / consequence |
