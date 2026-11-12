@@ -109,3 +109,9 @@
 !/docs/review_resolution_2026-11-05.md
 !/research/novelty_review_2026-11-05.md
 !/research/experiment_design_2026-11-05.md
+!/analysis/generalization/
+/analysis/generalization/*
+!/analysis/generalization/README.md
+!/analysis/generalization/audit_release.py
+!/analysis/generalization/source_manifest.json
+!/analysis/generalization/release_audit.json

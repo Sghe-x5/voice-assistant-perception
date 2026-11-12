@@ -1,0 +1,11 @@
+{
+  "source": "https://github.com/keyonvafa/human-generalization-llms",
+  "commit": "526ba59931749c052fb88ff4a17d27a348bb149d",
+  "retrieved_date": "2026-11-05",
+  "publication": "https://proceedings.mlr.press/v235/vafa24a.html",
+  "rights_note": "Repository has MIT software license. Benchmark question rights remain with their sources; this project distributes no raw rows or question text.",
+  "files": {
+    "train": {"path": "data/train.csv", "sha256": "87f2ef62ba38eecbfcc188e4fcece44732bbf8a0478b0007530fe77636617468"},
+    "test": {"path": "data/test.csv", "sha256": "61f811ebb577dc4ed6aaf4c3da7e63e87dc01b46cb07795c3ad5bd03c5160365"}
+  }
+}

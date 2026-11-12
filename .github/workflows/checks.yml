@@ -24,6 +24,8 @@ jobs:
         run: python -m unittest discover -s tests -p test_fieldwork.py -v
       - name: Test turn-level questions and input provenance
         run: python -m unittest discover -s tests -p test_question_coding.py -v
+      - name: Test public-release audit accounting with synthetic rows
+        run: python -m unittest discover -s tests -p test_generalization_audit.py -v
   source-derivation:
     runs-on: ubuntu-latest
     steps:
