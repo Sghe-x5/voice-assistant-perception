@@ -92,6 +92,19 @@
 !/analysis/validation/
 !/analysis/lexical/
 !/pilot/README.md
+
+# Authored process-transfer instrument only; generated slots/exports stay local.
+!/pilot/process_transfer/
+/pilot/process_transfer/*
+!/pilot/process_transfer/materials.py
+!/pilot/process_transfer/study.py
+!/pilot/process_transfer/form.html
+!/pilot/process_transfer/diagnostics.py
+!/pilot/process_transfer/README.md
+!/pilot/process_transfer/PROTOCOL.md
+!/pilot/process_transfer/REVIEW.md
+!/pilot/process_transfer/summaries.py
+!/pilot/process_transfer/REVIEW_RESPONSE.md
 !/pilot/plan_comparison.py
 !/pilot/model_panel.example.json
 !/docs/research_plan_ru.md
