@@ -1,4 +1,4 @@
-# Independent statistical review
+# Проверка арифметики и структуры шкал
 
 Review date: 2026-11-04. Read-only inputs; all numerical review outputs stay here.
 No project analysis module
@@ -26,7 +26,7 @@ Two comparator checks accompany the arithmetic checks:
 - `cocreation_increment_vs_design.csv`: point differences against design/user
   predictions, the comparator specified in E4. No inferential CI is asserted.
 
-The **one substantial additional analysis** is `ordinal_structure.py`: marginal
+The additional analysis is `ordinal_structure.py`: marginal
 thresholds estimated from observed category frequencies, pairwise polychoric
 correlations under a bivariate-normal latent-response assumption, then standardized
 one- and two-factor off-diagonal ULS fits. Pearson ULS fits use the same criterion

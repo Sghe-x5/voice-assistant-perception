@@ -1,11 +1,12 @@
-# Earlier prospective live-voice latency protocol
+# Дополнительный вариант: задержки в голосовом взаимодействии
 
 Предварительный вариант исследования задержек, 4 ноября 2026; сбор не проводился.
-Текущий реализованный инструмент — [сценарный пилот](../pilot/process_transfer/PROTOCOL.md).
-Этот документ сохраняет отдельное предложение для будущего живого голосового исследования.
+Этот подробный вариант не выбран для ближайшего запуска. Он сохраняет решения
+по записи событий, случайному назначению условий и расчёту выборки, которые могут
+пригодиться позже. Общие приоритеты — в [программе исследований](experiments.md).
 
 
-Status: **design only; no participants recruited, no new observations collected, no ethics approval or public preregistration obtained for this protocol.** It is a specification for extending the completed public-data secondary analysis, not evidence that a live-user model has been validated. Version 2026-11-04.
+Status: **design only; no participants recruited, no new observations collected, no ethics approval or public preregistration obtained for this protocol.** It is a specification for extending the existing public-data analyses, not evidence that a live-user model has been validated. Version 2026-11-04.
 
 ## Scientific target
 

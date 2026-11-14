@@ -1,6 +1,9 @@
 # Dialogue context and clarification: related studies
 
-**Historical snapshot, superseded for direction selection by [the broader 5 November review](research_questions.md).**
+Дополнение к [основному обзору вопросов](research_questions.md). Часть источников
+повторяется, но здесь также сохранены отдельные работы о структуре уточнений
+и ограничения доступа. Это не выбор уточнений как главного направления.
+При объединении с общим обзором нужно сохранить эти сведения.
 
 Search cutoff: 4 November 2026. Targeted search, **not exhaustive systematic review**. The proposed new study is unperformed. “Not demonstrated in inspected sections” never means “absent from all literature.” Publication status and access are recorded separately from plausibility.
 
