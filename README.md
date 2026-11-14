@@ -5,6 +5,10 @@ form expectations about their performance on new tasks. It combines a reanalysis
 of published ratings of scripted voice-assistant interactions with an experimental
 design for studying how people evaluate an assistant that shares work with a tool.
 
+Across the two video-vignette experiments, experimental conditions and user
+characteristics gave weak predictions of perceived intelligence. Credibility ratings
+from the same questionnaire predicted it substantially better.
+
 ## Research questions
 
 - Do survey items on perceived intelligence and credibility capture distinct aspects of users' judgments?
