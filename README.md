@@ -1,73 +1,35 @@
-# Восприятие умности голосового ассистента
+# Perceived Intelligence in Voice Assistants
 
-Исследовательский проект о том, как измерять и предсказывать воспринимаемую
-умность ассистента по диалогу. Цель — связать оценки пользователей с наблюдаемыми
-свойствами взаимодействия: использованием контекста, уточнениями, исправлением
-ошибок, содержанием ответов и усилиями пользователя.
+This project studies how people judge the intelligence of voice assistants and
+form expectations about their performance on new tasks. It combines a reanalysis
+of published ratings of scripted voice-assistant interactions with an experimental
+design for studying how people evaluate an assistant that shares work with a tool.
 
-Воспринимаемая умность — это впечатление человека об ассистенте. Её рассматриваем
-отдельно от фактического выполнения задачи, полезности, доверия и симпатии.
+Across the two video-vignette experiments, experimental conditions and user
+characteristics gave weak predictions of perceived intelligence. Credibility ratings
+from the same questionnaire predicted it substantially better.
 
-## Исследовательские вопросы
+## Research questions
 
-- Как люди понимают умность ассистента и какими вопросами её можно измерять?
-- Какие свойства диалога помогают предсказывать эту оценку сверх успешности задачи?
-- Как меняется впечатление при разных способах решения одной задачи?
-- Насколько измерение и прогноз переносятся между людьми, задачами, моделями
-  и текстовым или голосовым взаимодействием?
+- Do survey items on perceived intelligence and credibility capture distinct aspects of users' judgments?
+- How well do experimental conditions and user characteristics predict intelligence ratings in a different experiment?
+- When two versions of a scenario end with the same result, how does the division of work between an assistant and a tool shape expectations for new tasks?
 
-Для ответа сочетаем анализ опубликованных данных, наблюдение и разметку
-диалогов, сравнение прогнозных моделей и контролируемые эксперименты.
-Методы и условия отдельных исследований описаны в протоколах.
+## Repository contents
 
-## Материалы
+- [Measurement and prediction](results/README.md) — analyses of published user ratings.
+- [Transfer study materials](pilot/process_transfer/README.md) — experimental protocol, scenarios, response form and analysis code.
+- [Benchmark replication](analysis/generalization/README.md) — reproduction of two baselines from Vafa et al. (ICML 2024) and an analysis of the train–test split.
 
-- [План исследования](docs/research_plan_ru.md) — текущие вопросы, этапы работы
-  и требования к корпусу диалогов.
-- [Программа исследований](research/experiments.md) — измерения, сравнения
-  и варианты экспериментов.
-- [Литература и методы](research/README.md) — первоисточники и разбор подходов.
-- [Результаты анализа](results/README.md) — выполненные расчёты и их ограничения.
-- [Материалы для сбора данных](pilot/README.md) — формы, сценарии и обработка ответов.
-- [Правила разметки](docs/dialogue_codebook_ru.md) — типы задач и события диалога.
-- [Источники данных](data/PROVENANCE.md) — состав выборок и условия использования.
+## Reproduce the analyses
 
-## Структура репозитория
-
-| Папка | Содержание |
-|---|---|
-| `research/` | Литература, исследовательские вопросы и протоколы |
-| `docs/` | План, инструкции наблюдения и разметки, устройство проекта |
-| `pilot/` | Формы, сценарии и инструменты подготовки исследований |
-| `data/` | Описание источников и манифест загрузки |
-| `src/` | Основные расчёты и прогнозные модели |
-| `analysis/` | Дополнительные анализы и проверки |
-| `results/` | Сводные таблицы и их интерпретация |
-| `models/`, `examples/` | Сохранённая исследовательская модель и пример входных данных |
-| `scripts/`, `tests/` | Загрузка, общий запуск и автоматические проверки |
-
-## Запуск анализа
-
-Нужен Python 3.12. Расчёты на опубликованных данных не требуют платных API.
+With Python 3.12, run from the repository root:
 
 ```bash
-git clone https://github.com/Sghe-x5/voice-assistant-perception.git
-cd voice-assistant-perception
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python scripts/run_all.py --download
 ```
 
-Команда загружает исходные файлы, проверяет их хеши, выполняет анализ и тесты,
-сохраняет таблицы в `results/`. Для повторного запуска с уже загруженными данными
-уберите `--download`.
-
-На Windows путь к Python в окружении — `.venv\Scripts\python.exe`.
-Полный расчёт проверялся на macOS ARM64; полная совместимость с Windows не проверена.
-Инструкции к отдельным формам находятся в [материалах исследования](pilot/README.md).
-
-[Устройство проекта](docs/architecture.md) · [Работа с кодом](docs/contributing.md) ·
-[Проверка расчётов](research/verification.md).
-
-Индивидуальные ответы, транскрипты и ключи доступа хранятся вне Git.
-Условия использования внешних данных: [NOTICE.txt](NOTICE.txt).
+The runner verifies the input files, writes results to `results/`, and runs the tests.
+See [data provenance](data/PROVENANCE.md) for sources and data access.

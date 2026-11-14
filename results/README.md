@@ -1,81 +1,62 @@
-# Что уже показали расчёты
+# Secondary analysis results
 
-Это промежуточные результаты работы с опубликованными данными. Исследование
-продолжается: общей модели восприятия умности и новых человеческих данных пока нет.
-[Источники, состав выборок и ограничения](../data/PROVENANCE.md) описаны отдельно.
+| Published dataset | Participant records | Outcomes |
+|---|---:|---|
+| Two voice-assistant video-vignette experiments | 353 and 200 | Perceived intelligence and credibility |
+| Text-based co-creation with GPT-4.1 | 148 | Perceived intelligence and other evaluations |
+| Text interaction with assigned response delays | 240, with 237 used for prediction | Usefulness, thoughtfulness and other response-quality ratings |
 
-## Какие данные разобрали
+Each source was analyzed separately. The voice-assistant data capture ratings
+after watching scripted interactions. See [data provenance](../data/PROVENANCE.md)
+for inclusion rules, source links and measures.
 
-| Материал | Наблюдения | Что можно изучить |
-|---|---|---|
-| Два эксперимента с голосовыми видеосценариями | 353 и 200 записей участников | Оценки умности и достоверности, условия сценария, характеристики людей |
-| Текстовая совместная работа с ИИ | 148 записей участников | Оценки и события работы над идеями; состав аналитической выборки зависит от задачи |
-| Текстовый эксперимент с задержками | 240 участников; 237 в прогнозных моделях | Полезность, вдумчивость и другие оценки; прямого вопроса об умности нет |
+## Voice-assistant vignettes
 
-Это разные исследования и показатели. Люди в первом источнике смотрели видео,
-а не разговаривали с ассистентом. Сумма 941 — число записей в разных исследованиях,
-а не единая выборка пользователей голосового интерфейса.
+**Measurement.** Perceived intelligence and credibility had a pooled score
+correlation of 0.744. A correlated two-factor model fit better than a single
+factor (RMSEA 0.105 vs. 0.156), with residual misfit.
+[Score associations](voice_measurement.csv) · [Factor models](voice_cfa.csv)
 
-## Что нашли
+**Prediction across experiments.** Ridge models trained on the first experiment
+and tested on the second achieved R² = 0.022 from conditions and user
+characteristics, and R² = 0.518 from same-survey credibility ratings. The
+credibility model serves as a diagnostic comparison between ratings from the
+same participant. Across 1,000 bootstrap draws per direction with retraining,
+its advantage persisted. The intervals for the gain from conditions and user
+characteristics over a constant prediction included zero.
+[Prediction results](voice_prediction.csv) · [Retraining results](voice_retraining_bootstrap.csv)
 
-**Оценки умности тесно связаны с другими оценками того же человека.**
-В голосовых видеосценариях корреляция умности и достоверности — около 0,74.
-Модель с двумя факторами лучше однофакторной, но её соответствие данным остаётся
-недостаточным. Это не основание объявлять найденные факторы независимыми.
-[Измерения](voice_measurement.csv), [факторные модели](voice_cfa.csv).
+**Role recognition.** In the pooled analysis, the estimated role contrast
+(partner minus servant) was -0.055 points across the 553 released records.
+It was +0.410 points among the 328 participants who passed the first or sole
+role recognition check. The check took place after assignment, so conditioning
+on its outcome can change the composition of the comparison groups.
+[Role contrasts](voice_effects.csv)
 
-**Условия сценария и характеристики пользователя пока предсказывают немного.**
-При обучении на первом голосовом эксперименте и проверке на втором R² модели
-с этими признаками равен 0,022. Если использовать оценку достоверности из той же
-анкеты, R² равен 0,518. Другой ответ из анкеты помогает предсказать умность,
-но не объясняет, какое поведение ассистента её вызывает.
-[Все направления переноса и модели](voice_prediction.csv).
+## Text interaction
 
-**Простые журналы действий дают мало дополнительной информации.**
-В текстовой совместной работе добавление событий к условиям и характеристикам
-пользователя изменяет R² на +0,0047 при проверке на новых участниках и на −0,0131
-при проверке на исключённом условии. Простая модель текста с TF-IDF также дала
-малые изменения. Это ограничение проверенных признаков и моделей, а не
-доказательство того, что содержание диалога не важно.
-[Сравнение наборов признаков](cocreation_increment_vs_design.csv),
-[проверка текстовых признаков](../analysis/lexical/SUMMARY.md).
+**Co-creation.** Adding session events to conditions and user characteristics
+changed R² by +0.0047 on held-out participants and -0.0131 on held-out
+conditions. Adding TF-IDF text features also yielded small changes.
+[Feature comparisons](cocreation_increment_vs_design.csv) ·
+[Prediction results](cocreation_prediction_metrics.csv) ·
+[Text-feature analysis](../analysis/lexical/SUMMARY.md)
 
-**Отбор участников заметно меняет вывод об эффекте роли ассистента.**
-В объединённых голосовых данных оценка различия «партнёр — слуга» меняется
-с −0,055 до +0,410 балла, если оставить прошедших первую или единственную
-проверку распознавания роли. Это разные составы выборки; отбор после воздействия
-не позволяет считать полученное различие чистым причинным эффектом.
-[Оценки и интервалы](voice_effects.csv).
+**Assigned response delays.** Event counts predicted thoughtfulness and
+usefulness weakly. Models using other ratings from the same questionnaire
+achieved R² of approximately 0.50 and 0.55, respectively. This study measured
+response quality without a direct perceived-intelligence rating.
+[Prediction results](latency_prediction_metrics.csv) ·
+[Condition contrasts](latency_contrasts.csv)
 
-**Результаты о задержках нельзя выдавать за результат об умности.**
-В этом источнике измерены другие свойства ответа. Модели на событиях слабо
-предсказывают вдумчивость и полезность, а остальные оценки из той же анкеты
-дают R² около 0,50 и 0,55. Различия между заданными задержками представлены
-отдельно от прогнозных моделей.
-[Прогнозы](latency_prediction_metrics.csv), [сравнения условий](latency_contrasts.csv).
+## Reproduction
 
-## Что это меняет в плане исследования
+Run `scripts/run_all.py --download` from the repository root. Participant-level
+files and predictions are generated locally and kept outside Git. The
+[information-source comparisons](information_gap.csv) use resampling with fixed
+predictions. Interval coverage for the text cross-validation analyses has not
+been established. The [voice retraining analysis](../research/retraining_sensitivity.md)
+resamples training and test participants and refits models.
 
-Пока мы лучше предсказываем одну субъективную оценку через другие, чем объясняем
-её наблюдаемыми событиями. Нужны данные, где одновременно есть реальный диалог,
-информация, доступная ассистенту, фактический результат и оценка пользователя.
-Текущие источники не дают этой связки.
-
-Для следующего этапа подготовлены [дневник и разметка](../docs/fieldwork_start_ru.md)
-и [заготовка сценарного эксперимента](../pilot/process_transfer/README.md). В ней планируем проверить,
-как распределение работы меняет ожидания о способностях. Математические
-контрпримеры уже показывают, почему одного различия прогнозов недостаточно
-для доказательства механизма. Ответов внешних участников пока нет.
-[План дальнейшей работы](../docs/research_plan_ru.md) и [программа исследований](../research/experiments.md).
-
-## Как проверить
-
-Расчёты запускаются через `scripts/run_all.py`; методы — в
-[протоколе анализа](../research/analysis_protocol.md), выполненные проверки —
-в [описании воспроизведения](../research/verification.md).
-
-Индивидуальные записи и прогнозы воспроизводятся локально и не хранятся в Git.
-`information_gap.csv` содержит повторные выборки при фиксированных прогнозах;
-диапазоны для текстовой кросс-валидации не являются подтверждённо калиброванными
-95%-ми доверительными интервалами. [Повторное обучение голосовых моделей](../research/retraining_sensitivity.md)
-проверено отдельно. Ни один из этих расчётов не заменяет новых участников.
+[Analysis protocol](../research/analysis_protocol.md) ·
+[Verification](../research/verification.md)

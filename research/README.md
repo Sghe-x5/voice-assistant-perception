@@ -1,28 +1,23 @@
-# Методы и литература
+# Research methods and references
 
-## Анализ опубликованных данных
+## Published data
 
-- [Что показали расчёты](../results/README.md).
+- [Analysis protocol](analysis_protocol.md)
+- [Results summary](../results/README.md)
+- [Retraining sensitivity analysis](retraining_sensitivity.md)
+- [Reproduction and verification](verification.md)
+- [Analysis of Vafa et al.'s benchmark](../analysis/generalization/README.md)
 
-- [Вопросы и методы](analysis_protocol.md).
-- [Обзор литературы](literature_review.md) и [библиография](references_literature.json).
-- [Близкие исследования измерения интеллекта](related_measurement_studies.md).
-- [Устойчивость к повторному обучению](retraining_sensitivity.md).
-- [Проверка расчётов](verification.md).
-- [Данные Vafa et al. и воспроизведение двух моделей](../analysis/generalization/README.md).
+## Literature
 
-## Новое исследование
+- [Literature review](literature_review.md) and [bibliography](references_literature.json)
+- [Related measurement studies](related_measurement_studies.md)
+- [Research questions and competing explanations](research_questions.md)
+- [Literature on clarification in dialogue](clarification_literature.md)
 
-- [План работы](../docs/research_plan_ru.md) — текущие вопросы, требования к корпусу и порядок действий.
-- [Программа исследований](experiments.md) — измерение, предсказание, варианты экспериментов и перенос.
-- [Сравнение объяснений](research_questions.md) — память, ошибки, инициатива,
-  ожидания, усилия и общее впечатление; первоисточники и нерешённые вопросы.
-- [Заготовка сценарного эксперимента](../pilot/process_transfer/PROTOCOL.md) — реализованный дизайн.
-- [Вариант эксперимента с уточнениями](clarification_design.md) и
-  [ближайшие работы](clarification_literature.md).
-- [Предварительный план живого голосового исследования](prospective_protocol.md).
+## Study designs
 
-Программа и протоколы новых исследований не описывают собранные человеческие данные.
-Старые предложения не заменяют условия реализованного сценарного пилота.
-Ограничения поиска указаны в обзорах; они не являются исчерпывающей
-проверкой всех публикаций.
+- [Assistant and module experiment](../pilot/process_transfer/README.md) with scenarios, a form and analysis code
+- [Clarification experiment design](clarification_design.md)
+- [Voice latency study design](prospective_protocol.md)
+- [Research plan](../docs/research_plan_ru.md) and [study comparisons](experiments.md)

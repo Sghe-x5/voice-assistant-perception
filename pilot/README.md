@@ -1,42 +1,35 @@
-# Материалы и инструменты исследования
+# Study materials and tools
 
-Здесь три инструмента для разных этапов. Это наработки для сбора данных,
-а не завершённый эксперимент. Их данные анализируются отдельно. Технический
-путь `pilot/` и значения вроде `developer_pilot` сохранены для совместимости;
-они обозначают предварительную проверку, а не весь исследовательский проект.
-
-Общая последовательность — [в плане](../docs/research_plan_ru.md), конкретные
-сравнения и их готовность — в [программе исследований](../research/experiments.md).
-
-| Задача | Инструмент |
+| Purpose | Materials |
 |---|---|
-| Проверить ожидания по подготовленным сценариям | [Заготовка сценарного эксперимента](process_transfer/README.md) |
-| Изучить реальные эпизоды использования | [Дневник и разметка](../docs/fieldwork_start_ru.md) |
-| Собрать оценки диалогов с двумя ассистентами | Форма ниже |
+| Study expectations about an assistant's performance on new tasks | [Assistant and module experiment](process_transfer/README.md) |
+| Record and annotate real interactions | [Observation guide](../docs/fieldwork_start_ru.md) and [annotation codebook](../docs/dialogue_codebook_ru.md) |
+| Collect ratings after interactions with two assistants | Form and instructions below |
 
-## Диалоги с двумя ассистентами
+## Comparing two assistants
 
-1. Прочитайте [инструкцию](protocol.txt).
-2. Откройте [форму](rating_form.html) локально в браузере.
-3. Выполните [шесть сценариев](prompts_ru.txt) с двумя ассистентами.
-4. После каждого диалога сохраните свои оценки и экспортируйте JSON.
-5. Обработайте файл по [инструкции анализатора](analysis_readme.txt).
+1. Read the [study instructions](protocol.txt).
+2. Open the [HTML form](rating_form.html) locally in a browser.
+3. Complete the [six scenarios](prompts_ru.txt) with each assistant.
+4. Record your ratings after each dialogue and export the responses as JSON.
+5. Process the export using the [analysis instructions](analysis_readme.txt).
 
-Форма хранит данные локально и ничего не отправляет. Ключ `scoring_key.json`
-нужен для последующей разметки; не читайте его до выставления собственных оценок.
-Фиксированные задания подходят для проверки процедуры. Для свободного диалога
-с уточнениями нужны ветви сценария, зависящие от ответа ассистента.
+The form stores responses locally. Use `scoring_key.json` for annotation after
+recording subjective ratings. The scripts specify fixed prompts. To study open
+dialogue with clarification, use follow-up prompts that depend on the assistant's
+response.
 
-Для нескольких моделей [планировщик](plan_comparison.py) составляет разные пары:
+The [pair planner](plan_comparison.py) generates assignments across a panel of
+assistants:
 
 ```bash
 .venv/bin/python pilot/plan_comparison.py --models pilot/model_panel.example.json --seed 20261104 --output pilot/local-comparison-plan
 ```
 
-Конфигурации задаются в [JSON-файле](model_panel.example.json). Назначения вручную
-переносятся в форму; программа не вызывает модели. Список семейств не ограничен
-GPT, DeepSeek и Qwen. Перед сбором проверьте доступ и запишите фактические настройки.
-[Пробные запуски](free_model_probe.md) описаны отдельно.
+Edit the [example panel](model_panel.example.json) to choose configurations.
+Transfer the assignments to the form manually and record the product settings
+used in each interaction. The planner generates assignments offline.
+[Technical probe instructions](free_model_probe.md) cover test runs.
 
-Один человек с 12 диалогами остаётся одним участником. Ответы автоматизированного
-тестирования не дают человеческих оценок. Экспорты и транскрипты хранятся вне Git.
+Record repeated dialogues under the same participant ID. Track automated runs
+separately from participant ratings. Store transcripts and exports outside Git.

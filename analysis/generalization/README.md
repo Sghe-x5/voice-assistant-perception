@@ -1,4 +1,4 @@
-# Данные Vafa et al.: состав выборки и две модели
+# Vafa et al. Benchmark: Split Analysis and Baseline Reproduction
 
 Offline examination of the public release accompanying Vafa, Rambachan
 and Mullainathan, ICML 2024. This is a check of data suitability, **not a

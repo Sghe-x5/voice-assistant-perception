@@ -1,4 +1,4 @@
-# Проверка арифметики и структуры шкал
+# Arithmetic and Ordinal Measurement Checks
 
 Review date: 2026-11-04. Read-only inputs; all numerical review outputs stay here.
 No project analysis module
