@@ -64,4 +64,4 @@ use 1,000 draws. See `retraining_sensitivity.md` for seeds and verification.
 
 ## Planned outputs
 
-Executable analysis for all three source datasets; participant-level cleaned derivatives without free text; exact predictions and fold assignment; numerical tables; figures; source/audit records; full manuscript with limitations; an implementable prospective live-voice validation protocol clearly marked unexecuted. A deployment-ready universal smartness metric and a newly collected voice study are outside what these public data can substantiate.
+Executable analysis for all three source datasets; participant-level cleaned derivatives without free text; exact predictions and fold assignment; numerical tables; figures; source and verification records; interim findings with limitations; an implementable prospective live-voice validation protocol clearly marked unexecuted. A deployment-ready universal smartness metric and a newly collected voice study are outside what these public data can substantiate.

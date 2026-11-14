@@ -18,7 +18,7 @@ training/test draw in each direction without calling project functions. It also
 checks co-creation point metrics and source-level latency contrasts/Holm correction.
 Results and tolerances are in `arithmetic_checks.json`.
 
-Two small comparator audits accompany the arithmetic checks:
+Two comparator checks accompany the arithmetic checks:
 
 - `median_baseline.csv`: training-median constant for the MAE comparison; 4,000
   fixed-predictor test-participant bootstrap draws, seed 130719. These intervals

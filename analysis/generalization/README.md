@@ -1,14 +1,14 @@
-# Vafa release audit (5 November 2026)
+# Данные Vafa et al.: состав выборки и две модели
 
-Independent offline inspection of the public release accompanying Vafa, Rambachan
-and Mullainathan, ICML 2024. This is an auxiliary data-suitability audit, **not a
+Offline examination of the public release accompanying Vafa, Rambachan
+and Mullainathan, ICML 2024. This is a check of data suitability, **not a
 new voice-perception study or a replication of every model in their paper**.
 
 Primary [paper](https://proceedings.mlr.press/v235/vafa24a.html), inspected
 [full text §§3–4](https://arxiv.org/html/2406.01382v1), and pinned
 [repository](https://github.com/keyonvafa/human-generalization-llms/tree/526ba59931749c052fb88ff4a17d27a348bb149d).
 
-## Owning path and safe reproduction
+## Reproduction
 
 Upstream `train.py` reads train.csv → `model.tokenize_function` → BERT training →
 `ckpts/bert.pth`; `evaluate_belief_change_models.py` reads test.csv and the saved
@@ -23,11 +23,11 @@ It never imports upstream code, loads checkpoints, downloads models or calls API
 ```bash
 git clone https://github.com/keyonvafa/human-generalization-llms.git /path/to/source
 git -C /path/to/source checkout 526ba59931749c052fb88ff4a17d27a348bb149d
-.venv/bin/python analysis/generalization/audit_release.py --source /path/to/source --baselines --output /path/to/new-audit.json
+.venv/bin/python analysis/generalization/audit_release.py --source /path/to/source --baselines --output /path/to/comparison.json
 ```
 
 The output must not exist. Baseline reproduction uses this project's numerical
-environment; structural audit uses only the standard library. No raw survey rows
+environment; structure check uses only the standard library. No raw survey rows
 or question texts are redistributed. Repository MIT licensing does not erase
 rights in the benchmark questions from other sources.
 
@@ -91,5 +91,5 @@ Source hashes are in source_manifest.json; aggregate calculations are in
 release_audit.json. The script hash and sklearn version accompany outputs.
 Synthetic tests cover role-crossed question overlap, repeated/discordant labels,
 correctness-conditioned keys, invalid data, hash refusal and Unicode record
-boundaries. The audit was independently cross-checked against a separate pandas
+boundaries. The calculations were cross-checked against a separate pandas
 calculation. Source files remained unchanged.
