@@ -1,19 +1,15 @@
-# Дополнительные анализы
+# Supplementary analyses
 
-| Раздел | Что проверяет | Команда из корня |
+| Analysis | Purpose | Command from the repository root |
 |---|---|---|
-| [validation](validation/README.md) | Независимая арифметика и порядковая структура | `.venv/bin/python analysis/validation/check_arithmetic.py` |
-| [validation](validation/README.md) | Полихорические корреляции и ULS-диагностика | `.venv/bin/python analysis/validation/ordinal_structure.py` |
-| [lexical](lexical/SUMMARY.md) | Добавочную информацию из текстов AI-идей | `.venv/bin/python analysis/lexical/analyze_lexical.py` |
+| [Arithmetic checks](validation/README.md) | Independently recalculate statistics and prediction metrics | `.venv/bin/python analysis/validation/check_arithmetic.py` |
+| [Ordinal measurement checks](validation/README.md) | Compare factor structure using polychoric correlations and unweighted least squares | `.venv/bin/python analysis/validation/ordinal_structure.py` |
+| [Text features](lexical/SUMMARY.md) | Test whether text from AI-generated ideas improves prediction beyond session features | `.venv/bin/python analysis/lexical/analyze_lexical.py` |
 
-Сначала нужен основной расчёт: `scripts/run_all.py --download`. Лексическая
-проверка уже входит в него; повторять её отдельно без изменений не требуется.
-Остальные проверки независимы от основного анализа. Это не новые участники
-и не доказательство валидности общего фактора интеллекта.
+Run `scripts/run_all.py --download` to prepare the data and reproduce the main
+results. The runner includes the text-feature analysis. The arithmetic and
+ordinal checks can be run separately.
 
-## Данные об ожиданиях от ИИ
-
-[Дополнительный анализ Vafa et al.](generalization/README.md) проверяет состав
-опубликованных CSV, пересечение вопросов между обучением и проверкой, а также
-воспроизводит две простые модели. Показатель здесь — изменение ожиданий,
-а не оценка умности. Этот анализ не объединяется с тремя основными источниками.
+The [analysis of Vafa et al.'s benchmark](generalization/README.md) reproduces two
+baselines for predicting changes in human expectations about AI and examines the
+training and test splits. It uses a separate dataset and outcome.

@@ -1,73 +1,57 @@
-# Восприятие умности голосового ассистента
+# Perceived Intelligence in Voice Assistants
 
-Исследовательский проект о том, как измерять и предсказывать воспринимаемую
-умность ассистента по диалогу. Цель — связать оценки пользователей с наблюдаемыми
-свойствами взаимодействия: использованием контекста, уточнениями, исправлением
-ошибок, содержанием ответов и усилиями пользователя.
+How do people judge a voice assistant's intelligence, and how well do experimental
+conditions and interaction features predict those judgments? This repository
+contains secondary analyses of published human ratings and an experimental design
+for studying how people form expectations about an assistant's abilities.
 
-Воспринимаемая умность — это впечатление человека об ассистенте. Её рассматриваем
-отдельно от фактического выполнения задачи, полезности, доверия и симпатии.
+## Measurement and prediction
 
-## Исследовательские вопросы
+We reanalyzed two published video-vignette experiments with 353 and 200 participant
+records. Participants rated voice assistants after watching scripted interactions.
+Perceived intelligence and credibility had a pooled score correlation of 0.744.
+A correlated two-factor model fit better than a single-factor model (RMSEA 0.105
+vs. 0.156), with residual misfit. [Source study](https://doi.org/10.1080/15358593.2026.2621084) ·
+[Measurement results](results/voice_measurement.csv) · [Factor models](results/voice_cfa.csv)
 
-- Как люди понимают умность ассистента и какими вопросами её можно измерять?
-- Какие свойства диалога помогают предсказывать эту оценку сверх успешности задачи?
-- Как меняется впечатление при разных способах решения одной задачи?
-- Насколько измерение и прогноз переносятся между людьми, задачами, моделями
-  и текстовым или голосовым взаимодействием?
+Ridge models trained on the first experiment and tested on the second achieved
+R² = 0.022 with experimental conditions and user characteristics, and R² = 0.518
+with credibility ratings from the same questionnaire as a diagnostic benchmark.
+With 1,000 bootstrap draws per transfer direction, including retraining, the
+benchmark retained its advantage. The bootstrap intervals for the reduction in
+mean absolute error from conditions and user features over a constant prediction
+included zero. [Analysis code](src/analyze_voice.py) · [Prediction results](results/voice_prediction.csv) ·
+[Retraining analysis](research/retraining_sensitivity.md)
 
-Для ответа сочетаем анализ опубликованных данных, наблюдение и разметку
-диалогов, сравнение прогнозных моделей и контролируемые эксперименты.
-Методы и условия отдельных исследований описаны в протоколах.
+## Expectations about new tasks
 
-## Материалы
+The scenario experiment swaps which of two operations the assistant and a
+supporting module perform, keeping the final outcome and amount of assistance
+fixed. For subsequent tasks, module availability varies independently, and task
+topic is crossed with operation. Mathematical counterexamples show that changes
+in general impressions can produce apparent operation-specific effects in
+aggregate forecasts. The repository contains the scenarios, response form and
+analysis code for this design. The experiment is documented at the design and
+software verification stage. [Study materials](pilot/process_transfer/README.md) ·
+[Counterexamples](pilot/process_transfer/diagnostics.py)
 
-- [План исследования](docs/research_plan_ru.md) — текущие вопросы, этапы работы
-  и требования к корпусу диалогов.
-- [Программа исследований](research/experiments.md) — измерения, сравнения
-  и варианты экспериментов.
-- [Литература и методы](research/README.md) — первоисточники и разбор подходов.
-- [Результаты анализа](results/README.md) — выполненные расчёты и их ограничения.
-- [Материалы для сбора данных](pilot/README.md) — формы, сценарии и обработка ответов.
-- [Правила разметки](docs/dialogue_codebook_ru.md) — типы задач и события диалога.
-- [Источники данных](data/PROVENANCE.md) — состав выборок и условия использования.
+An accompanying analysis reproduces two baselines from Vafa et al. (ICML 2024)
+and examines the benchmark split. All test task categories were represented in
+training, and both questions in 384 of 492 test pairs appeared individually in
+training. The split evaluates new pairs within known categories.
+[Source study](https://proceedings.mlr.press/v235/vafa24a.html) ·
+[Reproduction and split analysis](analysis/generalization/README.md)
 
-## Структура репозитория
+## Reproduce the analyses
 
-| Папка | Содержание |
-|---|---|
-| `research/` | Литература, исследовательские вопросы и протоколы |
-| `docs/` | План, инструкции наблюдения и разметки, устройство проекта |
-| `pilot/` | Формы, сценарии и инструменты подготовки исследований |
-| `data/` | Описание источников и манифест загрузки |
-| `src/` | Основные расчёты и прогнозные модели |
-| `analysis/` | Дополнительные анализы и проверки |
-| `results/` | Сводные таблицы и их интерпретация |
-| `models/`, `examples/` | Сохранённая исследовательская модель и пример входных данных |
-| `scripts/`, `tests/` | Загрузка, общий запуск и автоматические проверки |
-
-## Запуск анализа
-
-Нужен Python 3.12. Расчёты на опубликованных данных не требуют платных API.
+Use Python 3.12. From the repository root:
 
 ```bash
-git clone https://github.com/Sghe-x5/voice-assistant-perception.git
-cd voice-assistant-perception
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python scripts/run_all.py --download
 ```
 
-Команда загружает исходные файлы, проверяет их хеши, выполняет анализ и тесты,
-сохраняет таблицы в `results/`. Для повторного запуска с уже загруженными данными
-уберите `--download`.
-
-На Windows путь к Python в окружении — `.venv\Scripts\python.exe`.
-Полный расчёт проверялся на macOS ARM64; полная совместимость с Windows не проверена.
-Инструкции к отдельным формам находятся в [материалах исследования](pilot/README.md).
-
-[Устройство проекта](docs/architecture.md) · [Работа с кодом](docs/contributing.md) ·
-[Проверка расчётов](research/verification.md).
-
-Индивидуальные ответы, транскрипты и ключи доступа хранятся вне Git.
-Условия использования внешних данных: [NOTICE.txt](NOTICE.txt).
+The runner downloads and verifies the study files, rebuilds the analysis outputs
+in `results/`, and runs the tests. [Data provenance](data/PROVENANCE.md) ·
+[Results summary](results/README.md) · [Additional analyses](analysis/README.md)

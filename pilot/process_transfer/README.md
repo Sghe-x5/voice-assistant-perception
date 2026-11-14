@@ -1,46 +1,40 @@
-# Заготовка эксперимента: распределение работы и ожидания
+# Assistant and module experiment
 
-Участник читает вымышленный сценарий: ассистент и отдельный модуль выполняют
-по одной части задачи. Затем участник оценивает ассистента и прогнозирует его
-успех в четырёх новых задачах. Меняются распределение работы и доступность
-модуля для новых задач; конечный ответ в сценарии остаётся одинаковым.
+A participant reads a fictional scenario in which an assistant and a separate
+module each perform one of two operations. The assignment of operations varies
+while the final answer stays the same. The participant rates the assistant and
+forecasts success on four new tasks. Module availability on those tasks varies
+independently. The [protocol in Russian](PROTOCOL.md) specifies the design,
+contrasts and limits of interpretation.
 
-Это текстовый эксперимент с подготовленными материалами. Реальные модели
-и голосовой интерфейс здесь не используются. Человеческих результатов пока нет.
-Это вариант 4 из [программы исследований](../../research/experiments.md),
-а не обязательный первый этап. Проверка вопросов об умности и сбор корпуса
-для предсказания остаются самостоятельными задачами.
-[Протокол](PROTOCOL.md) описывает условия, расчёты и ограничения интерпретации.
+The implementation uses scripted text, an offline HTML form and an analysis
+script. Participant recruitment and data collection for this design are pending.
 
-## Пробный запуск
+## Generate pages
 
-Нужен Python 3.12; достаточно стандартной библиотеки. Команды выполняются
-из корня репозитория. Для самостоятельной отладки:
+Run from the repository root with Python 3.12. The script uses the standard library.
+The following command creates a batch for the authors to check the procedure:
 
 ```bash
 python3.12 pilot/process_transfer/study.py build \
   --seed 20261105 --batch-id author-debug-v02 --output pilot/local-process-v02 \
   --role developer_pilot --origin human_observer \
-  --study-info 'Авторская отладка. Файл остаётся у вас; можно не передавать или удалить. Внешний набор этим запуском не проводится.'
+  --study-info 'Author walkthrough. Responses are downloaded locally and can be kept or deleted.'
 ```
 
-В папке появятся план, инструкция и 256 HTML-страниц с комбинациями условий.
-Это не рекомендуемый размер выборки. Откройте одну страницу в браузере,
-пройдите форму и скачайте JSON. Обновление вкладки теряет несохранённые ответы.
-Форма ничего не отправляет в сеть.
+The output contains the assignment plan, instructions and 256 HTML pages covering
+the combinations of conditions. Each page is filled out in a browser and exports
+a local JSON file. Refreshing the page clears unsaved responses. The 256 pages
+describe the allocation design. Sample size requires a separate calculation.
 
-При сборе один человек получает одну ранее не выданную страницу. Выдавайте их
-последовательно, не подбирая условие под человека. Каждые четыре страницы
-балансируют два основных фактора; отказы могут нарушить баланс. Прерванную
-страницу не выдавайте повторно. Журнал назначений и случайные коды храните отдельно;
-план и другие варианты участнику заранее не показывайте.
+For data collection, issue one unused page per person in the assigned sequence.
+Each block of four balances the two main factors. Incomplete blocks and refusals
+can affect balance. Keep the assignment log and participant codes separate from
+the pages. Reserve `developer_pilot` for authors. For external volunteers, use
+`--role volunteer` and a separate batch ID with the contact, participation,
+retention and withdrawal arrangements in `--study-info`.
 
-Авторы остаются в группе `developer_pilot`: знание гипотез не исчезает при
-скрытии метаданных. Для внешних добровольцев нужны отдельный `batch_id`,
-`--role volunteer`, условия участия, контакт, сроки хранения и правила удаления.
-Это ещё не организовано.
-
-## Обработка ответов
+## Import responses
 
 ```bash
 python3.12 pilot/process_transfer/study.py analyze \
@@ -49,52 +43,49 @@ python3.12 pilot/process_transfer/study.py analyze \
   --output pilot/local-process-report-v02.json
 ```
 
-Программа проверяет версию и соответствие исходному плану. Пропуски остаются
-пропусками. Неправильные ответы на вопросы о понимании не исключают участника.
-Умность, симпатия, полезность, трудность чтения и заслуга анализируются отдельно.
-Вопрос о заслуге задаётся после прогнозов, чтобы не подсказывать эту тему заранее.
+The importer checks each export against the original plan and preserves missing
+answers. Comprehension checks are reported separately. Intelligence, liking,
+usefulness, reading effort and credit are reported separately, with the credit
+item shown after the forecasts.
 
-Отчёт показывает различия прогнозов между условиями и покрытие плана.
-`common_block_crossover` относится только к общим заполненным блокам;
-`full_design_crossover` остаётся `null` без полного покрытия. Диапазоны при
-пропусках показывают возможные значения для переданных ответов, а не
-доверительные интервалы. Людей без экспорта эти диапазоны не учитывают.
-Роли, происхождение данных, порядки показа и доступность модуля разделены.
+The descriptive report records differences in forecasts, coverage and bounds
+for missing answers. `common_block_crossover` uses blocks with coverage in both
+conditions. `full_design_crossover` stays `null` until the full planned design is
+covered. Missing-answer bounds give possible ranges over submitted exports.
+The report separates sample roles, data origins, presentation order and module
+availability.
 
-## Проверка программы
+## Software checks
 
-Автоматические ответы всегда отмечайте `synthetic_test`. Используйте новую папку:
+Use a new output directory and label automated responses `synthetic_test`:
 
 ```bash
 python3.12 pilot/process_transfer/study.py build \
   --seed 20261105 --batch-id synthetic-v02 --origin synthetic_test \
-  --study-info 'Только синтетическая техническая проверка.' \
+  --study-info 'Software check with synthetic responses.' \
   --output pilot/local-process-synthetic
 python3.12 -m unittest discover -s tests -p 'test_process_transfer*.py' -v
 python3.12 pilot/process_transfer/diagnostics.py
 ```
 
-`diagnostics.py` вычисляет контрпримеры: похожие различия прогнозов могут возникать
-без специфического изменения представления об одной способности. Это
-математические примеры, а не ответы участников.
+`diagnostics.py` calculates mathematical examples in which aggregate forecasts
+appear to change by operation even though individual changes reflect general
+impressions.
 
-Дополнительная браузерная проверка требует Playwright и Chromium либо `CHROME_PATH`:
+An optional browser check requires Playwright and Chromium, or `CHROME_PATH`:
 
 ```bash
 node tests/process_transfer_browser.cjs pilot/local-process-synthetic
 ```
 
-Она проверяет восемь полных сочетаний и частичное завершение, импорт, узкий экран,
-сетевые обращения и ошибки JavaScript. В папке не должно быть старых `export-*.json`.
-Этот запуск не входит в Python CI.
+It checks completed and partial exports, import, narrow-screen layout, network
+requests and JavaScript errors. Use a directory without existing `export-*.json`
+files.
 
-## Версии и хранение
+## Versioning and storage
 
-Текущая версия — 0.2. Условия и вопросы отличаются от 0.1, поэтому старый план
-нельзя импортировать как новый. Для старых экспортов нужна отдельная копия кода
-из коммита `be517c13ff8066422f2886c41b2c1b6c0f9f682c`. Не меняйте хеши вручную:
-план связан с версией инструмента, и изменение инструмента требует нового набора.
-
-Планы, ответы и индивидуальные отчёты хранятся вне Git. Проверка полей файла
-не подтверждает личность, согласие или независимость участника. Человеческие результаты
-этого эксперимента ещё не получены; их нельзя смешивать с опубликованными данными.
+Version 0.2 changes the conditions and response fields. Use a separate checkout
+at commit `be517c13ff8066422f2886c41b2c1b6c0f9f682c` to read version 0.1 exports.
+Keep each allocation plan with its original instrument version and build a new
+batch when the instrument changes. Store plans, exports and individual reports
+outside Git.
