@@ -1,10 +1,20 @@
 # Perceived Intelligence in Voice Assistants
 
-Research code for measuring perceived intelligence in voice assistants and studying
-how people form expectations about an assistant on new tasks.
+This project studies how people judge the intelligence of voice assistants and
+form expectations about their performance on new tasks. It combines a reanalysis
+of published ratings of scripted voice-assistant interactions with an experimental
+design for studying how people evaluate an assistant that shares work with a tool.
+
+## Research questions
+
+- Do survey items on perceived intelligence and credibility capture distinct aspects of users' judgments?
+- How well do experimental conditions and user characteristics predict intelligence ratings in a different experiment?
+- When two versions of a scenario end with the same result, how does the division of work between an assistant and a tool shape expectations for new tasks?
+
+## Repository contents
 
 - [Measurement and prediction](results/README.md) — analyses of published user ratings.
-- [Transfer study materials](pilot/process_transfer/README.md) — scripted scenarios that vary how an assistant and a module share a task, with a response form and analysis code.
+- [Transfer study materials](pilot/process_transfer/README.md) — experimental protocol, scenarios, response form and analysis code.
 - [Benchmark replication](analysis/generalization/README.md) — reproduction of two baselines from Vafa et al. (ICML 2024) and an analysis of the train–test split.
 
 ## Reproduce the analyses
