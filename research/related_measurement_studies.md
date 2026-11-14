@@ -1,6 +1,6 @@
 # Related studies of perceived intelligence
 
-Date: 2026-11-04. One full primary paper and two primary abstracts were inspected. Access metadata are recorded in `references_literature.json`; incomplete access limits conclusions about overlap with our study.
+One full primary paper and two primary abstracts were inspected. Access metadata are recorded in `references_literature.json`; incomplete access limits conclusions about overlap with our study.
 
 ## Moussawi and Koufaris (2019)
 
